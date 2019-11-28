@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Lambda and recursion | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="The notes of Lambda Calculus and recursion theory[Dana Scott] continuous functions from Pw to Pw:  1.All finite subset of subsets of w can be enumeration,the enumeration is effecive and resursive.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Lambda and recursion">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;29&#x2F;Lambda%20and%20recursion&#x2F;index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="The notes of Lambda Calculus and recursion theory[Dana Scott] continuous functions from Pw to Pw:  1.All finite subset of subsets of w can be enumeration,the enumeration is effecive and resursive.">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-11-28T17:58:25.904Z">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Lambda and recursion" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/11/29/Lambda%20and%20recursion/" class="article-date">
+  <time datetime="2019-11-28T17:58:23.957Z" itemprop="datePublished">2019-11-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Lambda and recursion
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h2 id="The-notes-of-Lambda-Calculus-and-recursion-theory-Dana-Scott"><a href="#The-notes-of-Lambda-Calculus-and-recursion-theory-Dana-Scott" class="headerlink" title="The notes of Lambda Calculus and recursion theory[Dana Scott]"></a>The notes of Lambda Calculus and recursion theory[Dana Scott]</h2><ul>
+<li><p>continuous functions from Pw to Pw:<br>  1.All finite subset of subsets of w can be enumeration,the enumeration is effecive and resursive.</p>
+<p>  2.Pw can be viewed as a topology space.Scott topo of Pw</p>
+<p>  3.what is continuous? f(x)=\union {f(e_n),e_n \contained in x}</p>
+<p>  4.graph of f: {(n,m),m \in f(e_n)}    (n,m)=1/2 (n+m)(n+m+1)+m<br> converse:every set decides a continuous function :fun:Pw to (Pw to Pw)<br> there is a adjoint</p>
+<p>  5.for k-variables,continuous is equivalent to separately continuous<br> closed under substitution<br> every continous f has least fixed point</p>
+<p>  6.Pw is injective. Every To with countable basis topology can be embedded into it.</p>
+<p>  7.f:w to w can be extended as f<em>:Pw to Pw. f</em>(x) = \union {f(n),n \in x}.This it the least extension.and f* is distributive(stronger than continuous)</p>
+</li>
+<li><p>Lambda calculus:<br>  8.denotation:for all continuous functions,we can made its mathematical notation u s.t. u(x) = f(x),  u(x)=fun(u)(x).  i.e.  u=graph(f)</p>
+<p>  9.syntax and semantics of the term language LAMBDA by six equations:</p>
+<pre><code>0={0}
+x+1={n+1,n \in x}
+x-1=
+z \contain x,y = {n \in x,0 \in z} \union {m \in y, \exist k.k+1 \in z}
+u(x)={m, \exist e_n \contained x.(n,m) \in u}
+\lambuda x.\tau={(n,m),m \in \tau[e_n/x]}</code></pre><p>  10.LAMBDA-definable functions are continuous:view LAMBDA-term as funtions of its free variable.</p>
+<p>  11.reduction are satisfied: \alpha \beta \gama</p>
+<p>  12.functions of k-variables can be reduced to functions of one variable.</p>
+<pre><code>u(x_0)(x_1)...(x_k-1)=f(x_0,x_1,...,x_k-1)
+u=lambda x_0.labmbda x_1 ... lambda x_k-1. f(x_0,x_1,...,x_k-1)</code></pre><p>  13.LAMBDA-definable functions can be defined by iterated application starting from variables and six constants:</p>
+<pre><code>0 = 0
+suc = lambda x.x + 1
+pred
+cond
+K
+S</code></pre><p> 14.paradpxical combinator Y: lambda u.(lambda x.u(x(x)))(lambda x.u(x(x)))<br> If u is the graph of a continuous function f,then Y(u) is Fix(f).</p>
+<p> 15.some definitions and lemmas:</p>
+<pre><code>\bottom =(lambda x.x(x))(lambda x.x(x)) , deduce:\bottom = \empty
+0,1 \in lambda x.0
+x \union y = (lambda x.0) \&gt; x,y
+\top = Y(lambda f.lambda x.x \union f(x+1))(0),deduce \top = w
+the only fixed points of K are \bottom and \top
+define &lt;x_0,x_1,...,x_k&gt;= lambda z.z \&gt; x_0,&lt;x_1,...x_k&gt;(z-1),deduce &lt;x_0,...,x_k&gt;(n)=x_n, if x&lt;k 
+                 =\bottom, otherwise   </code></pre></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/11/29/Lambda%20and%20recursion/" data-id="ck3j2q6l60002uowi2bhc7jct" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/11/29/algebra/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          algebra
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/11/19/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Hello World</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Mathematics/">Mathematics</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/11/29/logic/">logic</a>
+          </li>
+        
+          <li>
+            <a href="/2019/11/29/Stone/">Stone Representation Theorem</a>
+          </li>
+        
+          <li>
+            <a href="/2019/11/29/algebra/">algebra</a>
+          </li>
+        
+          <li>
+            <a href="/2019/11/29/Lambda%20and%20recursion/">Lambda and recursion</a>
+          </li>
+        
+          <li>
+            <a href="/2019/11/19/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

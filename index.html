@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:locale" content="en">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-logic" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/11/29/logic/" class="article-date">
+  <time datetime="2019-11-28T17:58:25.938Z" itemprop="datePublished">2019-11-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/29/logic/">logic</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <script type="text/javascript" src='http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML'></script>
+<hr>
+<h2 id="Mathematical-Logic"><a href="#Mathematical-Logic" class="headerlink" title="Mathematical Logic"></a>Mathematical Logic</h2><p>This blog is a record of my study of the book Mathematical Logic written by Bell.This is a relatively difficult textbook.And at the same time,this blog can be a outline of the knowledge of Mathematical Logic.</p>
+<h1 id="Basic-concept"><a href="#Basic-concept" class="headerlink" title="Basic concept"></a>Basic concept</h1><p>Before talking about Mathematical Logic, There are some basic concepts we have to mention about.</p>
+<ul>
+<li><p>structure:<br>Structures usually is symboled as \(\mu\) are mathematical objects or frames which consist of three components:</p>
+<ol>
+<li><p>universe(domain):A non-empty class.The members of the class are called individuals.</p>
+</li>
+<li><p>operations </p>
+</li>
+<li><p>relations</p>
+<p>examples:Elementary arithmetic,Set theory,and Topological space.</p>
+</li>
+</ol>
+</li>
+<li><p>formal language:<br>  A formal language is symboled as \(\psi\),which is base on a structure.It is a set of strings which regularly consist of variables,function symbols,predicate symbols,etc. </p>
+</li>
+<li><p>metalanguage and object language:<br>When discuss formal languages,we have to distinguish the Mathematical objects that we want research and the language we used to describe the object language and the later is called metalanguage.<br>And in the second level,a symbol have two meanings:one is the object it denoting and one is the symbol itself.So,for distinguishing them,we use symbols wirtten by handwriting.</p>
+</li>
+<li><p>symbols(syntax) of the first order language  </p>
+<ol>
+<li>variables: \(x,y,z \) or \(v_1 \).</li>
+<li>fuction symbols: </li>
+<li>predicate symbols: </li>
+<li>connectives: \(\ \) (negation) and (implication)</li>
+<li>The universal quantifier \( \)</li>
+</ol>
+</li>
+<li><p>terms,formulas,sentences:</p>
+<ul>
+<li>A term is a string consists of a variable or a n-ary function symbol followed with n terms.(This kind of definition is by recusion)</li>
+<li>A formula is a string consists of  <ol>
+<li>An n-ary predicate symbol followed with n terms.</li>
+<li>a implication followed with two formulas.</li>
+<li>a negation followed with a formulas </li>
+<li>A quantifier symbol followed with a variable and a formula.</li>
+</ol>
+</li>
+<li>A sentence is a formula whose variables are all bounded variable (will be defined later)</li>
+</ul>
+</li>
+<li><p>weight and degree of complexity:<br>these conceptions can help us to decuce whether  a strings is in a first order language or not precedurely. </p>
+</li>
+<li><p>prime formula:atom formula or universal formula.</p>
+</li>
+</ul>
+<h1 id="Propositional-Logic"><a href="#Propositional-Logic" class="headerlink" title="Propositional Logic"></a>Propositional Logic</h1><p>   A propostional Logic is a part of first order language.It study the property<br>of the first language about its connectives and rules for manipulating them.</p>
+<h3 id="Basic-conceptions"><a href="#Basic-conceptions" class="headerlink" title="Basic conceptions"></a>Basic conceptions</h3><p>Its basic symbols are prime formulas,implication and negation.(we think prime formulas are independent by default.)</p>
+<ul>
+<li>truth and falsehood:<br>In our mind:for a prime formula or a sentence we may assign a value on them:truth means the terms followed with the predicate symbol are indeed in the relations.</li>
+</ul>
+<p>So,we define :</p>
+<ul>
+<li>Truth valation:<br>It is a map between language and a two point set satisfing:</li>
+</ul>
+<p>once we defined a truth valuation on each prime formulas,we can deduce a valuation of any formulas in the propositional language.The method is truth tables.</p>
+<ul>
+<li><p>tautology:<br>for a formula we call it tautology if for all the truth valuation,the valuation of the formula is truth.<br>We may through the truth tables to judge whether a formula is a tautology.</p>
+</li>
+<li><p>tautological consequence and equivalence:</p>
+</li>
+</ul>
+<p>similarly,we can judge whether a formula is a tautological consequence of a set of formulas or not by truth tables.But it becomes rather tedious.A easier way is propositional tableax.</p>
+<h3 id="propositional-tableax"><a href="#propositional-tableax" class="headerlink" title="propositional tableax"></a>propositional tableax</h3><ul>
+<li>tabuleax</li>
+<li>elimination theorem for tabueax</li>
+<li>completeness of tabuleax</li>
+</ul>
+<h3 id="Propositional-calculus"><a href="#Propositional-calculus" class="headerlink" title="Propositional calculus"></a>Propositional calculus</h3><p>The Propositional calculus is a formal method for generating tautological consequence of any given set of formulas.</p>
+<ul>
+<li><p>(lemma)modus pones:<br> it is sound as a rule of inference.</p>
+</li>
+<li><p>Three axioms schemes:<br> they are three tautological formulas chosen by us.</p>
+</li>
+<li><p>Propositional deduction:</p>
+<ul>
+<li>hypotheses</li>
+<li>proof </li>
+<li>deducible</li>
+<li>provable</li>
+</ul>
+</li>
+</ul>
+<p>calculus is sound.</p>
+<ul>
+<li><p>Deduction theorem:<br>it is of great practial use in constructing deductions.</p>
+</li>
+<li><p>some basix theorems about calculus:</p>
+<ul>
+<li>\(\negation \negation \alpha \decucible \alpha \),etc.</li>
+</ul>
+</li>
+<li><p>consistence and completeness: </p>
+<ul>
+<li>inconsistent:<br>A set of formula is called inconsistent if for some \( \beta \) both …(in fact,it means no truth valuation can make all the formula in the set valued truth at a time.But this is needed to be proved.)<br>then we can kown that for empty set it is consistent.this means Propositional calculus is consistent.</li>
+<li>completeness (week and strong):<br>tautological consequence can deduce deducible.</li>
+</ul>
+</li>
+<li><p>the proof of completeness:</p>
+</li>
+</ul>
+<ul>
+<li>Propositional logic based on other connectives </li>
+</ul>
+<h1 id="First-order-logic"><a href="#First-order-logic" class="headerlink" title="First-order logic"></a>First-order logic</h1><h3 id="Basic-conceptions-1"><a href="#Basic-conceptions-1" class="headerlink" title="Basic conceptions"></a>Basic conceptions</h3><ul>
+<li><p>syntax and semantics:<br>A language is just a set of strings which fit with some rules.It is just something in formal,we say this is syntax.It becomes meaningful when we give the symbols meaning.And we call the given meaning in a string semantics.In the first-order logic,we use structure(interpretation) as the surppoter of the semantics.</p>
+<ul>
+<li>each function symbol assign the meaning of a oparation in the structure</li>
+<li>predicate symbols assign to relations</li>
+<li>we define a valuation \(\sigma \):a map from variables to individuals.A valuation must underline a structure.A language with the same structure may have different valuations.    note:valuation is different with truth valuation.</li>
+</ul>
+</li>
+<li><p>BSD(Basic Semantic Definition):</p>
+<ul>
+<li>T1 T2</li>
+<li>F1 - F4<br>These definition are assign each term and formula meanings by induction.For a term the result is a individual,for a formula a Truth value.And the definition  fit with our feelings about the world.</li>
+</ul>
+</li>
+<li><p>\( \sigma \) satisfies a formula \(\psi \)</p>
+</li>
+<li><p>logical consequence,  equivalence,  logic true(valid),  satisfiable.<br>tautological consequence deduce logical consequence</p>
+</li>
+<li><p>deduction theorem and subsititution of logical consequence.</p>
+</li>
+<li><p>Freedom and Bondage:<br>\( x\) free in \( \alpha \) if \(x\) hasat least one free ocurrence in \( \alpha \)<br>two valuations agree on every free variable and universe and extralogical symbol then,for the expression,the semantics are the same.</p>
+</li>
+<li><p>for a sentence,the value depends only on the structure. If a structure satisfies a sentence we say it is a model for the sentence.</p>
+</li>
+</ul>
+<h3 id="Substitutiion"><a href="#Substitutiion" class="headerlink" title="Substitutiion"></a>Substitutiion</h3><p>Substitution is changing  one variable or terms,formulas as another expression.After this step,the semantics of the formulas or terms may be changed.But at some situations,under some conditions,the value do not change.This shows some variant properties in the language and also useful in simplifing strings.we write \( s(x/t)\) to express substituting \(t\) for each \(x\).</p>
+<ul>
+<li><p>for \(\bf{s},\bf{t}\) are terms,   \(\bf{x}\) a variable.<br>\( \bf{s(x/t)^{\sigma}} = {\bf{s}}^{\bf{\sigma (x} / \it{t})} \), \( t=\bf{t} ^{\bf{\sigma}} \)</p>
+</li>
+<li><p>for \(\bf{\alpha}\) a formula,   \(\bf{x}\) a variable,\(\bf{t}\) a term,we must </p>
+<ol>
+<li>define  \( \bf{\alpha (x/t)}\) in a way that the substitution only change the free occurrence of \( \bf{x}\) in \(\bf{\alpha}\) to ensure the equation above satisfied.</li>
+<li>avoid free variables being bouned.<br>so we define :<br>\(\bf{t}\) is free to be substituted for \(\bf{x} \) in \( \bf{\alpha} \) if no free occurrence of \(\bf{x} \) in  \( \bf{\alpha} \) is within a subformula of  \( \bf{\alpha} \) having the form  \(\bf{ \forall y \beta} \) , where \(\bf{y}\) occurs in \( \bf{t} \).<br>And then we define substitution by induction such that the equation still satisfied.</li>
+</ol>
+</li>
+<li><p>And for dealing with the substitiution of not free like above,we define <strong>alphabetic change</strong></p>
+</li>
+<li><p>finally,we can define the general substitution and prove that it preserve the value of the semantics.</p>
+</li>
+<li><p>And substitution can be extended to multi-situation.</p>
+</li>
+</ul>
+<p>===========</p>
+<h1 id="MODEL-THEORY"><a href="#MODEL-THEORY" class="headerlink" title="MODEL THEORY"></a>MODEL THEORY</h1><h3 id="Basic-ideas"><a href="#Basic-ideas" class="headerlink" title="Basic ideas"></a>Basic ideas</h3><ul>
+<li>What is a model?<br>for a sentence \( \sigma \)in a language,we say \( \sigma \)is valid in the structure.i.e. the structure is a model of \( \sigma \): for some assignment,<br>\( \sigma \) is true.In another words,a model is a stucture s.t. a sentence is true.</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/11/29/logic/" data-id="ck3j2q6le0004uowig6licdoa" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Stone" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/11/29/Stone/" class="article-date">
+  <time datetime="2019-11-28T17:58:24.020Z" itemprop="datePublished">2019-11-29</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Mathematics/">Mathematics</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/29/Stone/">Stone Representation Theorem</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>In Topology Sapce and Order Set,There are some connections.In domain theory,it established relationships between some sepcail oreder sets and topology space.Such as domain and Scott topology.The properties of one can be equivalent to the properties of the other,for example,the continuity of the functions.So,at some extent,we can say they are isometric.</p>
+<p>Boolean algebra is a lattice with negation and distributivity.It is a order set but at the same time it is also connected with logic.And it also can be represent as a topology space.This theorem shows a special topology matching to the boolean algebra.</p>
+<ul>
+<li><p>Field of sets: a subalgebra of a poerset algebra.</p>
+</li>
+<li><p>Field of subsets of $ X $: a subalgebra of $ PX $.</p>
+</li>
+<li><p>\(SB \): the set of all ultrafilters in B.</p>
+<blockquote>
+<p>Stone Representation Theorem:<br> Each Boolean algebra \(B\) isomorphic to a filed of subset of \(SB\):<br>\( u :\) \( x \rightarrow\){\( { F \in SB: x \in F } \)}</p>
+</blockquote>
+</li>
+<li><p>Boolean Space:A compact Hausdorff space with a base of clopen sets.</p>
+</li>
+<li><p>\(CX\):clopen algebra of  \(X \)</p>
+</li>
+</ul>
+<p>We can assign a natural topology to \( SB \) s.t. it become a Boolean space and \(CSB\) is isomorphic to \( B\).<br>The Space is called Stone space of \(B\):</p>
+<ul>
+<li>Stone spcace \(SB\):topology sapce on \(SB\) with  base of \( u[B]\)</li>
+</ul>
+<p>some properties:</p>
+<ul>
+<li>Boolean algebre is complete iff Its Stone space is extremely  disconnected.</li>
+<li>two finite  Boolean algebras of the same cardinality are isomorphic.And \(|B|=2^{|SB|}\)  </li>
+<li>for a infinite discrete space,its one-point compactification is the Stone space of the finite-cofinite algebra \(FX\)of \(X\): \(SFX=\).<br> Its stone-cech compactification is isomorphic to the Stone space of the power set algebra  of \(X\).</li>
+</ul>
+<p>The next question is to explore the cardinality of the Stone space:</p>
+<ul>
+<li>separating </li>
+<li>If \(X\) compact hausdorff:a separating field of clopen subsets of \(X\) is \(CX\)</li>
+<li>for infinite B:\(|B| \leq  |SB|\),if B is a power set algebra:\(|SB|=2^{|B|}\)</li>
+</ul>
+<p>continued…</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/11/29/Stone/" data-id="ck3j2q6m20005uowihdruf6ic" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-algebra" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/11/29/algebra/" class="article-date">
+  <time datetime="2019-11-28T17:58:23.975Z" itemprop="datePublished">2019-11-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/29/algebra/">algebra</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="boolean-algebra"><a href="#boolean-algebra" class="headerlink" title="boolean algebra"></a>boolean algebra</h1><hr>
+<ul>
+<li><p>lattice</p>
+</li>
+<li><p>distributive</p>
+</li>
+<li></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/11/29/algebra/" data-id="ck3j2q6la0003uowi6qzhhj5j" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Lambda and recursion" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/11/29/Lambda%20and%20recursion/" class="article-date">
+  <time datetime="2019-11-28T17:58:23.957Z" itemprop="datePublished">2019-11-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/29/Lambda%20and%20recursion/">Lambda and recursion</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h2 id="The-notes-of-Lambda-Calculus-and-recursion-theory-Dana-Scott"><a href="#The-notes-of-Lambda-Calculus-and-recursion-theory-Dana-Scott" class="headerlink" title="The notes of Lambda Calculus and recursion theory[Dana Scott]"></a>The notes of Lambda Calculus and recursion theory[Dana Scott]</h2><ul>
+<li><p>continuous functions from Pw to Pw:<br>  1.All finite subset of subsets of w can be enumeration,the enumeration is effecive and resursive.</p>
+<p>  2.Pw can be viewed as a topology space.Scott topo of Pw</p>
+<p>  3.what is continuous? f(x)=\union {f(e_n),e_n \contained in x}</p>
+<p>  4.graph of f: {(n,m),m \in f(e_n)}    (n,m)=1/2 (n+m)(n+m+1)+m<br> converse:every set decides a continuous function :fun:Pw to (Pw to Pw)<br> there is a adjoint</p>
+<p>  5.for k-variables,continuous is equivalent to separately continuous<br> closed under substitution<br> every continous f has least fixed point</p>
+<p>  6.Pw is injective. Every To with countable basis topology can be embedded into it.</p>
+<p>  7.f:w to w can be extended as f<em>:Pw to Pw. f</em>(x) = \union {f(n),n \in x}.This it the least extension.and f* is distributive(stronger than continuous)</p>
+</li>
+<li><p>Lambda calculus:<br>  8.denotation:for all continuous functions,we can made its mathematical notation u s.t. u(x) = f(x),  u(x)=fun(u)(x).  i.e.  u=graph(f)</p>
+<p>  9.syntax and semantics of the term language LAMBDA by six equations:</p>
+<pre><code>0={0}
+x+1={n+1,n \in x}
+x-1=
+z \contain x,y = {n \in x,0 \in z} \union {m \in y, \exist k.k+1 \in z}
+u(x)={m, \exist e_n \contained x.(n,m) \in u}
+\lambuda x.\tau={(n,m),m \in \tau[e_n/x]}</code></pre><p>  10.LAMBDA-definable functions are continuous:view LAMBDA-term as funtions of its free variable.</p>
+<p>  11.reduction are satisfied: \alpha \beta \gama</p>
+<p>  12.functions of k-variables can be reduced to functions of one variable.</p>
+<pre><code>u(x_0)(x_1)...(x_k-1)=f(x_0,x_1,...,x_k-1)
+u=lambda x_0.labmbda x_1 ... lambda x_k-1. f(x_0,x_1,...,x_k-1)</code></pre><p>  13.LAMBDA-definable functions can be defined by iterated application starting from variables and six constants:</p>
+<pre><code>0 = 0
+suc = lambda x.x + 1
+pred
+cond
+K
+S</code></pre><p> 14.paradpxical combinator Y: lambda u.(lambda x.u(x(x)))(lambda x.u(x(x)))<br> If u is the graph of a continuous function f,then Y(u) is Fix(f).</p>
+<p> 15.some definitions and lemmas:</p>
+<pre><code>\bottom =(lambda x.x(x))(lambda x.x(x)) , deduce:\bottom = \empty
+0,1 \in lambda x.0
+x \union y = (lambda x.0) \&gt; x,y
+\top = Y(lambda f.lambda x.x \union f(x+1))(0),deduce \top = w
+the only fixed points of K are \bottom and \top
+define &lt;x_0,x_1,...,x_k&gt;= lambda z.z \&gt; x_0,&lt;x_1,...x_k&gt;(z-1),deduce &lt;x_0,...,x_k&gt;(n)=x_n, if x&lt;k 
+                 =\bottom, otherwise   </code></pre></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/11/29/Lambda%20and%20recursion/" data-id="ck3j2q6l60002uowi2bhc7jct" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/11/19/hello-world/" class="article-date">
+  <time datetime="2019-11-19T15:13:51.856Z" itemprop="datePublished">2019-11-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/19/hello-world/">Hello World</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/11/19/hello-world/" data-id="ck3j2q6kj0000uowiax516dy9" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-injective space" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/12/08/injective%20space/" class="article-date">
+  <time datetime="2018-12-07T17:32:29.000Z" itemprop="datePublished">2018-12-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/12/08/injective%20space/">&#39;&#39;hello,Hexo&#39;&#39;</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>I am a primer in constructing a personal website.<br>This is the first Blog I write for testing if the website was constructed correctly.<br>Some of these words <em>are emphasized</em>.<br>Some of these words <em>are emphasized also</em>.</p>
+<p>Use two asterisks for <strong>strong emphasis</strong>.<br>Or, if you prefer, <strong>use two underscores instead</strong>.</p>
+<p>Unordered (bulleted) lists use asterisks, pluses, and hyphens (*, +, and -) as list markers. These three markers are interchangable; this:</p>
+<ul>
+<li>浮点数水电费</li>
+</ul>
+<pre><code>This is an [example link](http://example.com/).  </code></pre><p>cv</p>
+<p>   This is an <a href="http://example.com/" target="_blank" rel="noopener" title="With a Title">example link</a>.</p>
+<p>I start my morning with a cup of coffee and<br><a href="http://www.nytimes.com/" target="_blank" rel="noopener">The New York Times</a>.</p>
+<p>I strongly recommend against using any <code>&lt;blink&gt;</code> tags.</p>
+<p>I wish SmartyPants used named entities like <code>&amp;mdash;</code><br>instead of decimal-encoded entites like `这是一个普通段落。</p>
+<table>
+    <tr>
+        <td>Foo</td>
+    </tr>
+</table>
+
+<p>这是另一个普通段落。<br>&#8212;<br>4 &lt; 5<br>&copy;</p>
+<h1 id="这是-H1"><a href="#这是-H1" class="headerlink" title="这是 H1"></a>这是 H1</h1><h2 id="这是-H2"><a href="#这是-H2" class="headerlink" title="这是 H2"></a>这是 H2</h2><h3 id="这是-H3"><a href="#这是-H3" class="headerlink" title="这是 H3"></a>这是 H3</h3><blockquote>
+<p>This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,<br>consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.<br>Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.</p>
+<p>Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse<br>id sem consectetuer libero luctus adipiscing.</p>
+</blockquote>
+<blockquote>
+<p>This is the first level of quoting.</p>
+<blockquote>
+<p>This is nested blockquote.</p>
+</blockquote>
+<p>Back to the first level.</p>
+</blockquote>
+<blockquote>
+<h2 id="这是一个标题。"><a href="#这是一个标题。" class="headerlink" title="这是一个标题。"></a>这是一个标题。</h2></blockquote>
+<ol>
+<li><p>这是第一行列表项。<br>打sad十大</p>
+<p> 经考核可好看了</p>
+<blockquote>
+<ol start="2">
+<li>这是第二行列表项。</li>
+</ol>
+<p>给出一些例子代码：</p>
+<pre><code>return shell_exec(&quot;echo $input | $markdown_script&quot;);</code></pre></blockquote>
+</li>
+</ol>
+<ul>
+<li><p>This is a list item with two paragraphs.</p>
+<p>This is the second paragraph in the list item. You’re<br>only required to indent the first line. Lorem ipsum dolor<br>sit amet, consectetuer adipiscing elit.</p>
+</li>
+<li><p>Another item in the same list.</p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/12/08/injective%20space/" data-id="ck3j2q6kz0001uowih46d0hac" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Mathematics/">Mathematics</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/11/29/logic/">logic</a>
+          </li>
+        
+          <li>
+            <a href="/2019/11/29/Stone/">Stone Representation Theorem</a>
+          </li>
+        
+          <li>
+            <a href="/2019/11/29/algebra/">algebra</a>
+          </li>
+        
+          <li>
+            <a href="/2019/11/29/Lambda%20and%20recursion/">Lambda and recursion</a>
+          </li>
+        
+          <li>
+            <a href="/2019/11/19/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
