@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="A Lean 4 formalization case study for a counterexample concerning unit-interval retracts of quasicontinuous domains.">
+  <meta name="author" content="Yuxu Chen">
+  <meta property="article:published_time" content="2026-08-01">
+  <link rel="canonical" href="https://chanyuxu.github.io/ai4math/unit-interval-retracts/">
+  <link rel="icon" href="/img/favicon.ico">
+  <link rel="stylesheet" href="/css/academic.css">
+  <title>Unit-interval retracts in Lean 4 | AI4MATH | Yuxu Chen</title>
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+  <div class="site">
+    <header class="site-header">
+      <a class="site-title" href="/">Yuxu Chen</a>
+      <p class="site-description">Domain Theory and AI for Mathematics</p>
+    </header>
+
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="/">Home</a>
+      <a href="/domain-theory/">Domain Theory</a>
+      <a class="active" href="/ai4math/" aria-current="page">AI4MATH</a>
+      <a href="/notes/">Notes</a>
+    </nav>
+
+    <main id="content" class="content article-layout">
+      <article class="topic-article">
+        <header class="article-header">
+          <p class="article-kicker"><time datetime="2026-08-01">August 1, 2026</time> · AI4MATH</p>
+          <h1>Unit-interval retracts in Lean 4</h1>
+          <p class="article-meta">Formalization case study</p>
+        </header>
+
+        <p class="article-lead">This example follows one counterexample from its mathematical manuscript to a checked Lean 4 development. It is also a small test of what an auditable paper-to-Lean workflow should make visible: the source result, the formal declarations, the dependencies, and the remaining boundary between them.</p>
+
+        <div class="article-result">
+          <strong>Main result.</strong> The construction gives a quasicontinuous complete lattice <em>P</em> that is neither continuous nor quasialgebraic. Every chain in <em>P</em> is at most countable, and there is a Scott-continuous surjection <em>P</em> &rarr; [0,1], but [0,1] neither order-embeds into <em>P</em> nor occurs as a Scott-continuous retract of it. In particular, it gives negative answers to two public problems posed by Xiaoquan Xu.
+        </div>
+
+        <h2>Xu's public questions</h2>
+        <p>In <a href="http://tianyuan.amss.ac.cn/upload/fab78d36-bd52-42eb-84d3-ff99c953bb08/20260630/78141782782457470.pdf" target="_blank" rel="noopener"><em>Open Problems in Domain Theory</em></a>, Xiaoquan Xu posed Problems 1.14 and 1.15 (p. 33) for a quasicontinuous domain <em>P</em> that is not quasialgebraic:</p>
+        <ol class="article-steps">
+          <li>Must [0,1] be a Scott-continuous retract of <em>P</em>?</li>
+          <li>Must <em>P</em> contain a sub-dcpo order-isomorphic to [0,1]?</li>
+        </ol>
+        <p>The manuscript answers both questions in the negative through one concrete counterexample. It also separates these two stronger properties from the existence of a Scott-continuous surjection onto [0,1]. Its key technical ingredient is an exact description of finite-set approximation in a sparse interval construction.</p>
+
+        <h2>What is formalized</h2>
+        <p>The downloadable source contains the public aggregate file and sixteen component modules. They develop the interval geometry, complete-lattice structure, finite-set approximation, quasicontinuity, noncontinuity, counterexample, and dyadic splitting arguments. The declaration <code>UnitIntervalRetracts.mainCounterexample</code> collects the properties of the concrete lattice, while <code>UnitIntervalRetracts.negativeAnswers</code> records the two negative conclusions.</p>
+        <p>A separate finite-grid module formalizes the compactness step behind the positive splitting criterion: compatible choices on all finite dyadic grids yield a Scott-continuous section.</p>
+
+        <h2>Verification status</h2>
+        <p>The focused project build succeeds with Lean <code>v4.30.0-rc2</code> and Mathlib <code>v4.30.0-rc2</code>. Across the 3,809 lines in this bundle, the current audit finds no <code>sorry</code>, <code>admit</code>, local <code>axiom</code>, <code>opaque</code>, or <code>unsafe</code>. An axiom audit of the main counterexample, its negative corollary, and the finite-grid splitting theorem reports only the standard Lean/Mathlib dependencies <code>propext</code>, <code>Classical.choice</code>, and <code>Quot.sound</code>.</p>
+        <p>This status applies to the Lean declarations in the bundle. It does not mean that the manuscript's prose, bibliography, or typesetting has itself been formalized. The source archive is also an extract that depends on the surrounding domain-theory project.</p>
+
+        <h2>Downloads</h2>
+        <div class="download-grid">
+          <section class="download-card">
+            <h3>Manuscript PDF</h3>
+            <p>A 17-page draft compiled directly from the aligned LaTeX source. The source currently leaves the author field blank, so the PDF preserves that state.</p>
+            <a class="download-link" href="/downloads/unit-interval-retracts/unit-interval-retracts-manuscript.pdf" download>Download PDF</a>
+            <p class="download-meta">PDF · about 260 KB</p>
+          </section>
+
+          <section class="download-card">
+            <h3>Lean 4 source</h3>
+            <p>The aggregate import, sixteen component modules, and a README with version, build, and trust-boundary information.</p>
+            <a class="download-link" href="/downloads/unit-interval-retracts/unit-interval-retracts-lean.zip" download>Download Lean source</a>
+            <p class="download-meta">ZIP · about 48 KB · 17 Lean files</p>
+          </section>
+        </div>
+
+        <p class="ai-disclosure">This article was generated by AI.</p>
+      </article>
+
+      <aside class="topic-sidebar" aria-label="AI4MATH article navigation">
+        <div class="topic-sidebar-inner">
+          <h2>AI4MATH</h2>
+          <p>Monthly notes on formalized mathematics, Lean 4, and AI-assisted theorem proving.</p>
+
+          <h3>2026</h3>
+          <nav class="article-nav" aria-label="2026 AI4MATH articles">
+            <a href="/ai4math/paper-to-lean/">
+              <time datetime="2026-08">August 2026</time>
+              <span>Paper to Lean</span>
+            </a>
+            <a class="active" href="/ai4math/unit-interval-retracts/" aria-current="page">
+              <time datetime="2026-08">August 2026</time>
+              <span>Unit-interval retracts in Lean 4</span>
+            </a>
+            <a href="/ai4math/rb-function-space-characterization/">
+              <time datetime="2026-08">August 2026</time>
+              <span>RB function-space characterization</span>
+            </a>
+          </nav>
+
+          <div class="sidebar-links">
+            <h3>Related</h3>
+            <a href="https://github.com/ChanYuxu/domain-theory-book-formalization" target="_blank" rel="noopener">Domain theory formalization</a>
+          </div>
+        </div>
+      </aside>
+    </main>
+
+    <footer class="site-footer">
+      <p>© <span data-current-year>2026</span> Yuxu Chen</p>
+    </footer>
+  </div>
+  <script src="/js/academic.js" defer></script>
+</body>
+</html>

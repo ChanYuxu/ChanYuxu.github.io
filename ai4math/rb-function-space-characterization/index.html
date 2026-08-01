@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="A Lean 4 formalization case study for a function-space characterization of RB-domains.">
+  <meta name="author" content="Yuxu Chen">
+  <meta property="article:published_time" content="2026-08-02">
+  <link rel="canonical" href="https://chanyuxu.github.io/ai4math/rb-function-space-characterization/">
+  <link rel="icon" href="/img/favicon.ico">
+  <link rel="stylesheet" href="/css/academic.css">
+  <title>RB function-space characterization in Lean 4 | AI4MATH | Yuxu Chen</title>
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+  <div class="site">
+    <header class="site-header">
+      <a class="site-title" href="/">Yuxu Chen</a>
+      <p class="site-description">Domain Theory and AI for Mathematics</p>
+    </header>
+
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="/">Home</a>
+      <a href="/domain-theory/">Domain Theory</a>
+      <a class="active" href="/ai4math/" aria-current="page">AI4MATH</a>
+      <a href="/notes/">Notes</a>
+    </nav>
+
+    <main id="content" class="content article-layout">
+      <article class="topic-article">
+        <header class="article-header">
+          <p class="article-kicker"><time datetime="2026-08-02">August 2, 2026</time> · AI4MATH</p>
+          <h1>A function-space characterization of RB-domains in Lean 4</h1>
+          <p class="article-meta">Formalization case study</p>
+        </header>
+
+        <p class="article-lead">This case study follows a function-space characterization of RB-domains from its mathematical manuscript into Lean 4. The formal development makes both the constructive core of the argument and the two external results on which the final theorem depends explicit.</p>
+
+        <div class="article-result">
+          <strong>Main result.</strong> For every domain <em>X</em>, the manuscript proves that <em>X</em> is an RB-domain if and only if the function space [<em>X</em> &rarr; <em>E</em>] is continuous for every domain <em>E</em>. More strongly, it constructs an algebraic domain <em>A</em><sub><em>X</em></sub> such that continuity of the single function space [<em>X</em> &rarr; <em>A</em><sub><em>X</em></sub>] already forces <em>X</em> to be an RB-domain.
+        </div>
+
+        <h2>The Luan&ndash;Li question</h2>
+        <p>Miao, Luan, Liu, and Li proved that [<em>X</em> &rarr; <em>E</em>] is continuous whenever <em>X</em> is an RB-domain and <em>E</em> is a domain. Luan and Li then asked whether the converse holds and established it when <em>X</em> is algebraic. Their question appears in <a href="https://doi.org/10.1016/j.topol.2025.109295" target="_blank" rel="noopener"><em>Function spaces of Lawson-compact algebraic domains</em></a>. The present manuscript removes the algebraicity assumption from the source domain.</p>
+
+        <h2>How the test domain works</h2>
+        <p>The proof constructs a pointed algebraic domain <em>E</em><sub><em>X</em></sub> from directed subsets and arbitrary subsets of <em>X</em>. Step functions into <em>E</em><sub><em>X</em></sub> encode way-below requirements, while finite approximants below a canonical map can be converted into finite-image deflations of <em>X</em>.</p>
+        <p>To obtain a single decisive target, <em>E</em><sub><em>X</em></sub> is paired with the three-element algebraic domain <em>V</em> having two incomparable minimal elements below a common top:</p>
+        <div class="article-result">
+          <strong>Test target.</strong> <em>A</em><sub><em>X</em></sub> = <em>E</em><sub><em>X</em></sub> &times; <em>V</em>.
+        </div>
+        <p>The domain <em>A</em><sub><em>X</em></sub> is not a disjoint union of pointed domains. Using the cited function-space dichotomy, continuity of [<em>X</em> &rarr; <em>A</em><sub><em>X</em></sub>] therefore forces Scott compactness of <em>X</em>. A finite way-below cover can then be combined with the extraction construction to produce a directed family of deflations with supremum the identity.</p>
+
+        <h2>What is formalized</h2>
+        <p>The downloadable archive contains the public aggregate file and eight component modules: 9 Lean files and 1,857 lines in total. It formalizes the manuscript through <code>thm:rb-characterization</code>, including the test domains, requirements, finite-cover extraction, the function-space retract, and the final equivalence.</p>
+        <p>The principal public declarations are <code>RBFunctionSpace.universalTarget</code>, <code>RBFunctionSpace.rb_implies_continuous_functionSpace</code>, <code>RBFunctionSpace.rbCharacterization</code>, and <code>RBFunctionSpace.singleTargetCharacterization</code>. The later countably based uniform-test theorem and the manuscript's FS-domain section are intentionally not included in this formalized source boundary.</p>
+
+        <h2>Verification and trust boundary</h2>
+        <p>The focused target builds successfully with Lean <code>v4.30.0-rc2</code> and Mathlib <code>v4.30.0-rc2</code>. The archived RB modules contain no <code>sorry</code>, <code>admit</code>, <code>opaque</code>, or <code>unsafe</code>. The wider dependency build still reports three pre-existing <code>sorry</code> warnings in unrelated Chapter 2 and Chapter 3 files.</p>
+        <p>The final characterization is mechanically checked relative to exactly two project-local external axioms. The first is the forward function-space theorem from <a href="https://hjm.math.uzh.ch/Vol49-1.html" target="_blank" rel="noopener">Miao, Luan, Liu, and Li, <em>Houston Journal of Mathematics</em> 49 (2023), 87&ndash;103</a>. The second is the compactness/pointed-components dichotomy from <a href="https://www.cs.ox.ac.uk/files/298/handbook.pdf" target="_blank" rel="noopener">Abramsky and Jung, <em>Domain Theory</em>, Lemma 4.3.6</a>. It is therefore not presented as a zero-external-axiom theorem.</p>
+        <p>The internal constructions <code>finiteCoverExtraction</code> and <code>AX.functionSpaceRetract</code> report only the standard Lean/Mathlib dependencies <code>propext</code>, <code>Classical.choice</code>, and <code>Quot.sound</code> in the current axiom audit. One Lean packaging detail is also recorded: the bundled equivalence quantifies over targets in the same universe as <em>X</em>, while the forward implication itself is universe-polymorphic.</p>
+
+        <h2>Downloads</h2>
+        <div class="download-grid">
+          <section class="download-card">
+            <h3>Manuscript PDF</h3>
+            <p>The complete 10-page manuscript, compiled from the source aligned with this formalization. It also contains the later results that lie beyond the present Lean boundary.</p>
+            <a class="download-link" href="/downloads/rb-function-space-characterization/rb-function-space-characterization-manuscript.pdf" download>Download PDF</a>
+            <p class="download-meta">PDF · about 180 KB</p>
+          </section>
+
+          <section class="download-card">
+            <h3>Lean 4 source</h3>
+            <p>The aggregate import, eight component modules, and a README describing the versions, build command, source boundary, and external axioms.</p>
+            <a class="download-link" href="/downloads/rb-function-space-characterization/rb-function-space-characterization-lean.zip" download>Download Lean source</a>
+            <p class="download-meta">ZIP · about 22 KB · 9 Lean files</p>
+          </section>
+        </div>
+
+        <p class="ai-disclosure">This article was generated by AI.</p>
+      </article>
+
+      <aside class="topic-sidebar" aria-label="AI4MATH article navigation">
+        <div class="topic-sidebar-inner">
+          <h2>AI4MATH</h2>
+          <p>Monthly notes on formalized mathematics, Lean 4, and AI-assisted theorem proving.</p>
+
+          <h3>2026</h3>
+          <nav class="article-nav" aria-label="2026 AI4MATH articles">
+            <a href="/ai4math/paper-to-lean/">
+              <time datetime="2026-08">August 2026</time>
+              <span>Paper to Lean</span>
+            </a>
+            <a href="/ai4math/">
+              <time datetime="2026-08">August 2026</time>
+              <span>Unit-interval retracts in Lean 4</span>
+            </a>
+            <a class="active" href="/ai4math/rb-function-space-characterization/" aria-current="page">
+              <time datetime="2026-08">August 2026</time>
+              <span>RB function-space characterization</span>
+            </a>
+          </nav>
+
+          <div class="sidebar-links">
+            <h3>Related</h3>
+            <a href="https://github.com/ChanYuxu/domain-theory-book-formalization" target="_blank" rel="noopener">Domain theory formalization</a>
+          </div>
+        </div>
+      </aside>
+    </main>
+
+    <footer class="site-footer">
+      <p>© <span data-current-year>2026</span> Yuxu Chen</p>
+    </footer>
+  </div>
+  <script src="/js/academic.js" defer></script>
+</body>
+</html>

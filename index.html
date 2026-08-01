@@ -1,180 +1,190 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>旭的个人博客 - Yuxu's Thought Garden</title><meta name="author" content="Yuxu Chen"><meta name="copyright" content="Yuxu Chen"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="这是我的个人博客主页，用于分享学习笔记、日常想法和个人展示">
-<meta property="og:type" content="website">
-<meta property="og:title" content="旭的个人博客">
-<meta property="og:url" content="https://chanyuxu.github.io/index.html">
-<meta property="og:site_name" content="旭的个人博客">
-<meta property="og:description" content="这是我的个人博客主页，用于分享学习笔记、日常想法和个人展示">
-<meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://chanyuxu.github.io/img/butterfly-icon.png">
-<meta property="article:author" content="Yuxu Chen">
-<meta property="article:tag" content="博客,个人主页,思考,笔记">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://chanyuxu.github.io/img/butterfly-icon.png"><script type="application/ld+json">{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "旭的个人博客",
-  "alternateName": [
-    "Yuxu's Thought Garden",
-    "chanyuxu.github.io"
-  ],
-  "url": "https://chanyuxu.github.io/"
-}</script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://chanyuxu.github.io/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.5.4"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><script>
-    (() => {
-      
-    const saveToLocal = {
-      set: (key, value, ttl) => {
-        if (!ttl) return
-        const expiry = Date.now() + ttl * 86400000
-        localStorage.setItem(key, JSON.stringify({ value, expiry }))
-      },
-      get: key => {
-        const itemStr = localStorage.getItem(key)
-        if (!itemStr) return undefined
-        const { value, expiry } = JSON.parse(itemStr)
-        if (Date.now() > expiry) {
-          localStorage.removeItem(key)
-          return undefined
-        }
-        return value
-      }
-    }
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="Academic homepage of Yuxu Chen, postdoctoral researcher at the School of Mathematics, Sichuan University.">
+  <meta name="author" content="Yuxu Chen">
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="Yuxu Chen | Academic Homepage">
+  <meta property="og:description" content="Research in domain theory, AI for mathematics, Multimodal language models.">
+  <meta property="og:url" content="https://chanyuxu.github.io/">
+  <link rel="canonical" href="https://chanyuxu.github.io/">
+  <link rel="icon" href="/img/favicon.ico">
+  <link rel="stylesheet" href="/css/academic.css">
+  <title>Yuxu Chen | Academic Homepage</title>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Yuxu Chen",
+    "alternateName": "陈俣旭",
+    "jobTitle": "Postdoctoral Researcher",
+    "affiliation": {
+      "@type": "CollegeOrUniversity",
+      "name": "Sichuan University"
+    },
+    "url": "https://chanyuxu.github.io/",
+    "sameAs": ["https://github.com/ChanYuxu"],
+    "knowsAbout": ["Domain theory", "Ordered topology", "Powerdomains", "Formalized mathematics", "Clustering"]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+  <div class="site">
+    <header class="site-header">
+      <a class="site-title" href="/">Yuxu Chen</a>
+      <p class="site-description">Domain Theory and AI for Mathematics</p>
+    </header>
 
-    window.btf = {
-      saveToLocal,
-      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
-        const script = document.createElement('script')
-        script.src = url
-        script.async = true
-        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
-        script.onload = script.onreadystatechange = () => {
-          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
-        }
-        script.onerror = reject
-        document.head.appendChild(script)
-      }),
-      getCSS: (url, id) => new Promise((resolve, reject) => {
-        const link = document.createElement('link')
-        link.rel = 'stylesheet'
-        link.href = url
-        if (id) link.id = id
-        link.onload = link.onreadystatechange = () => {
-          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
-        }
-        link.onerror = reject
-        document.head.appendChild(link)
-      }),
-      addGlobalFn: (key, fn, name = false, parent = window) => {
-        if (!false && key.startsWith('pjax')) return
-        const globalFn = parent.globalFn || {}
-        globalFn[key] = globalFn[key] || {}
-        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
-        parent.globalFn = globalFn
-      }
-    }
-  
-      
-      const activateDarkMode = () => {
-        document.documentElement.setAttribute('data-theme', 'dark')
-        if (document.querySelector('meta[name="theme-color"]') !== null) {
-          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
-        }
-      }
-      const activateLightMode = () => {
-        document.documentElement.setAttribute('data-theme', 'light')
-        if (document.querySelector('meta[name="theme-color"]') !== null) {
-          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
-        }
-      }
+    <nav class="site-nav" aria-label="Main navigation">
+      <a class="active" href="/" aria-current="page">Home</a>
+      <a href="/domain-theory/">Domain Theory</a>
+      <a href="/ai4math/">AI4MATH</a>
+      <a href="/notes/">Notes</a>
+    </nav>
 
-      btf.activateDarkMode = activateDarkMode
-      btf.activateLightMode = activateLightMode
+    <main id="content" class="content">
+      <h1 class="page-title">Home</h1>
 
-      const theme = saveToLocal.get('theme')
-    
-          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+      <section class="profile" aria-labelledby="profile-name">
+        <div class="photo-placeholder" role="img" aria-label="Portrait photograph placeholder"></div>
+        <div class="profile-details">
+          <h2 id="profile-name">Yuxu Chen <span lang="zh-CN">（陈俣旭）</span></h2>
+          <p>Postdoctoral Researcher</p>
+          <p>School of Mathematics, Sichuan University</p>
+          <p lang="zh-CN">四川大学数学学院 博士后</p>
+          <p class="contact-line">
+            Email:
+            <a href="mailto:chenyuxu1210@qq.com">chenyuxu1210@qq.com</a><br>
+            <span class="contact-indent"><a href="mailto:chenyuxu@scu.edu.cn">chenyuxu@scu.edu.cn</a></span>
+          </p>
+        </div>
+      </section>
+
+      <section class="home-section" aria-labelledby="interests-title">
+        <h2 id="interests-title">Research interests</h2>
+        <ul>
+          <li>Domain theory, ordered topology, and denotational semantics</li>
+          <li>Formalized mathematics and AI-assisted theorem proving</li>
+          <li>Clustering, representation learning, and LLMs</li>
+        </ul>
+      </section>
+
+      <section class="home-section" aria-labelledby="introduction-title">
+        <h2 id="introduction-title">Introduction</h2>
+        <p>I am a postdoctoral researcher at the School of Mathematics, Sichuan University. My main research lies in domain theory and its connections with topology and the semantics of computation.</p>
+        <p>In domain theory, my work concerns powerdomains and powerspaces. These topics provide order-theoretic and topological tools for understanding approximation and nondeterministic or probabilistic computation.</p>
+        <p>I also work on artificial intelligence and machine learning.  In parallel, I am interested in formalized mathematics, Lean 4, and AI-assisted theorem proving, especially methods that turn mathematical arguments into transparent and machine-checkable developments.</p>
+      </section>
+
+      <section class="publication-section" aria-labelledby="home-publications">
+        <h2 id="home-publications">Publications</h2>
+
         
-      
-      const asideStatus = saveToLocal.get('aside-status')
-      if (asideStatus !== undefined) {
-        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
-      }
-    
-      
-    const detectApple = () => {
-      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
-        document.documentElement.classList.add('apple')
-      }
-    }
-    detectApple()
-  
-    })()
-  </script><script>const GLOBAL_CONFIG = {
-  root: '/',
-  algolia: undefined,
-  localSearch: undefined,
-  translate: undefined,
-  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
-  copy: {
-    success: '复制成功',
-    error: '复制失败',
-    noSupport: '浏览器不支持'
-  },
-  relativeDate: {
-    homepage: false,
-    post: false
-  },
-  runtime: '',
-  dateSuffix: {
-    just: '刚刚',
-    min: '分钟前',
-    hour: '小时前',
-    day: '天前',
-    month: '个月前'
-  },
-  copyright: undefined,
-  lightbox: 'null',
-  Snackbar: undefined,
-  infinitegrid: {
-    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.13.0/dist/infinitegrid.min.js',
-    buttonText: '加载更多'
-  },
-  isPhotoFigcaption: false,
-  islazyloadPlugin: false,
-  isAnchor: false,
-  percent: {
-    toc: true,
-    rightside: false,
-  },
-  autoDarkmode: false
-}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
-  title: '旭的个人博客',
-  isHighlightShrink: false,
-  isToc: false,
-  pageType: 'home'
-}</script><meta name="generator" content="Hexo 7.0.0"></head><body><div class="bg-animation" id="web_bg" style="background-color: #ffffff;"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/butterfly-icon.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">4</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">7</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/%E7%A7%91%E7%A0%94/"><i class="fa-fw fas fa-flask"></i><span> 科研主页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/AI4MATH/"><i class="fa-fw fas fa-brain"></i><span> AI4MATH</span></a></div><div class="menus_item"><a class="site-page" href="/categories/%E6%9D%82%E8%B0%88/"><i class="fa-fw fas fa-coffee"></i><span> 杂谈</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">旭的个人博客</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/%E7%A7%91%E7%A0%94/"><i class="fa-fw fas fa-flask"></i><span> 科研主页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/AI4MATH/"><i class="fa-fw fas fa-brain"></i><span> AI4MATH</span></a></div><div class="menus_item"><a class="site-page" href="/categories/%E6%9D%82%E8%B0%88/"><i class="fa-fw fas fa-coffee"></i><span> 杂谈</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><h1 class="title-seo">旭的个人博客</h1></header><main class="layout" id="content-inner"><div class="recent-posts nc" id="recent-posts"><div class="recent-post-items"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2026/04/12/%E6%9D%82%E8%B0%88-%E5%85%B3%E4%BA%8E%E5%B7%A5%E4%BD%9C%E4%B8%8E%E7%94%9F%E6%B4%BB/" title="杂谈: 关于工作与生活">杂谈: 关于工作与生活</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2026-04-12T10:20:46.000Z" title="发表于 2026-04-12 18:20:46">2026-04-12</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%9D%82%E8%B0%88/">杂谈</a></span></div><div class="content">平衡做科研的人常常会面临工作与生活的平衡问题。 我们总是想着：  再把这个定理证出来就休息 再把这篇论文看完就下班 再把这个实验跑完就放假  然而工作是永远做不完的。 学会在适当的时候停下来，也是一种能力。  我们走得太远，以至于忘了为什么出发。  </div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2026/04/12/%E7%A7%91%E7%A0%94-%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/" title="科研: 论文阅读笔记">科研: 论文阅读笔记</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2026-04-12T10:20:07.000Z" title="发表于 2026-04-12 18:20:07">2026-04-12</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%A7%91%E7%A0%94/">科研</a></span></div><div class="content">论文阅读方法高效阅读学术论文的三个阶段：  第一遍：标题、摘要、结论 第二遍：引言、图表、总结 第三遍：完整阅读，推导关键公式  笔记要点 记录核心创新点 标记未解决的问题 写下可以改进的方向 建立论文之间的关联  好的科研笔记是学术积累的基础。 </div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2026/04/12/AI4MATH-%E6%95%B0%E5%AD%A6%E5%BD%A2%E5%BC%8F%E5%8C%96%E6%A6%82%E8%BF%B0/" title="AI4MATH: 数学形式化概述">AI4MATH: 数学形式化概述</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2026-04-12T10:19:55.000Z" title="发表于 2026-04-12 18:19:55">2026-04-12</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/AI4MATH/">AI4MATH</a></span></div><div class="content">什么是数学形式化数学形式化是将数学概念、定理和证明转化为计算机可以理解和验证的严格逻辑语言的过程。 为什么重要 消除数学证明中的模糊性 计算机可以自动验证证明正确性 建立可信的数学知识库 为AI数学推理提供基础  目前主流的形式化系统包括 Lean、Isabelle、Coq 等。 </div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2026/04/12/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" title="我的第一篇博客">我的第一篇博客</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2026-04-12T07:06:36.000Z" title="发表于 2026-04-12 15:06:36">2026-04-12</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%9D%82%E8%B0%88/">杂谈</a></span></div><div class="content">几年前已有搭建博客的想法，通过github+hexo完成了搭建，但一来没有什么内容想要输出，二来完善主页内容比较麻烦，从而就搁置了。最近因为AI Agent的发展，修改代码这件事变得简单了许多，这成为一个契机重新拾起。通过博客记录自己的学习过程，分享自己的学习心得。也督促自己，多多输出，多多学习。 </div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/butterfly-icon.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Yuxu Chen</div><div class="author-info-description">这是我的个人博客主页，用于分享学习笔记、日常想法和个人展示</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">4</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">7</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/ChanYuxu"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/04/12/%E6%9D%82%E8%B0%88-%E5%85%B3%E4%BA%8E%E5%B7%A5%E4%BD%9C%E4%B8%8E%E7%94%9F%E6%B4%BB/" title="杂谈: 关于工作与生活">杂谈: 关于工作与生活</a><time datetime="2026-04-12T10:20:46.000Z" title="发表于 2026-04-12 18:20:46">2026-04-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/04/12/%E7%A7%91%E7%A0%94-%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/" title="科研: 论文阅读笔记">科研: 论文阅读笔记</a><time datetime="2026-04-12T10:20:07.000Z" title="发表于 2026-04-12 18:20:07">2026-04-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/04/12/AI4MATH-%E6%95%B0%E5%AD%A6%E5%BD%A2%E5%BC%8F%E5%8C%96%E6%A6%82%E8%BF%B0/" title="AI4MATH: 数学形式化概述">AI4MATH: 数学形式化概述</a><time datetime="2026-04-12T10:19:55.000Z" title="发表于 2026-04-12 18:19:55">2026-04-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/04/12/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" title="我的第一篇博客">我的第一篇博客</a><time datetime="2026-04-12T07:06:36.000Z" title="发表于 2026-04-12 15:06:36">2026-04-12</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
-            <i class="fas fa-folder-open"></i>
-            <span>分类</span>
-            
-          </div>
-          <ul class="card-category-list" id="aside-cat-list">
-            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/AI4MATH/"><span class="card-category-list-name">AI4MATH</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%9D%82%E8%B0%88/"><span class="card-category-list-name">杂谈</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E7%A7%91%E7%A0%94/"><span class="card-category-list-name">科研</span><span class="card-category-list-count">1</span></a></li>
-          </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/Lean4/" style="font-size: 1.1em; color: #999">Lean4</a> <a href="/tags/%E7%A0%94%E7%A9%B6%E6%96%B9%E6%B3%95/" style="font-size: 1.1em; color: #999">研究方法</a> <a href="/tags/%E8%AE%BA%E6%96%87/" style="font-size: 1.1em; color: #999">论文</a> <a href="/tags/%E7%94%9F%E6%B4%BB/" style="font-size: 1.1em; color: #999">生活</a> <a href="/tags/%E6%80%9D%E8%80%83/" style="font-size: 1.1em; color: #999">思考</a> <a href="/tags/%E5%AE%9A%E7%90%86%E8%AF%81%E6%98%8E/" style="font-size: 1.1em; color: #999">定理证明</a> <a href="/tags/%E5%BD%A2%E5%BC%8F%E5%8C%96%E9%AA%8C%E8%AF%81/" style="font-size: 1.1em; color: #999">形式化验证</a></div></div><div class="card-widget card-archives">
-    <div class="item-headline">
-      <i class="fas fa-archive"></i>
-      <span>归档</span>
-      
-    </div>
-  
-    <ul class="card-archive-list">
-      
-        <li class="card-archive-list-item">
-          <a class="card-archive-list-link" href="/archives/2026/04/">
-            <span class="card-archive-list-date">
-              四月 2026
-            </span>
-            <span class="card-archive-list-count">4</span>
-          </a>
-        </li>
-      
-    </ul>
-  </div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">4</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-04-12T10:44:27.421Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By Yuxu Chen</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.0.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.4</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.4"></script><script src="/js/main.js?v=5.5.4"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
+
+        <h3 class="publication-year">2026</h3>
+        <ol class="publication-list">
+          <li class="publication">
+            <p class="publication-title"><a href="https://doi.org/10.1016/j.compbiolchem.2026.108998" target="_blank" rel="noopener">scDCL: A multi-view single-cell RNA sequencing clustering method based on dual contrastive learning</a></p>
+            <p>Lin Gan, Hua Meng, <strong>Yuxu Chen</strong><sup>*</sup>, and Yu Wang.</p>
+            <p><em>Computational Biology and Chemistry</em>, 123: 108998, 2026. <a href="https://doi.org/10.1016/j.compbiolchem.2026.108998" target="_blank" rel="noopener">DOI</a></p>
+          </li>
+          <li class="publication">
+            <p class="publication-title"><a href="https://doi.org/10.1016/j.asoc.2025.114282" target="_blank" rel="noopener">Self-supervised clustering algorithm based on hierarchy of local density clusters and constraint propagation</a></p>
+            <p>Zhiguo Long, Xiaofei Feng, Rong Luo, and <strong>Yuxu Chen</strong>.</p>
+            <p><em>Applied Soft Computing</em>, 187: 114282, 2026. <a href="https://doi.org/10.1016/j.asoc.2025.114282" target="_blank" rel="noopener">DOI</a></p>
+          </li>
+        </ol>
+
+        <h3 class="publication-year">2025</h3>
+        <ol class="publication-list" start="3">
+          <li class="publication">
+            <p class="publication-title"><a href="https://doi.org/10.1109/DCC62719.2025.00051" target="_blank" rel="noopener">Compressing Inside Generating: A Latent Domain Codec for AI-Generated Images</a></p>
+            <p><strong>Yuxu Chen</strong>, Zhenhao Sun, Yuliang Huang, Lei Deng, Wei Han, Bo Bai, and Shiqi Wang.</p>
+            <p><em>2025 Data Compression Conference (DCC)</em>, p. 363, 2025. <a href="https://doi.org/10.1109/DCC62719.2025.00051" target="_blank" rel="noopener">DOI</a></p>
+          </li>
+        </ol>
+
+        <h3 class="publication-year">2024</h3>
+        <ol class="publication-list" start="4">
+          <li class="publication">
+            <p class="publication-title"><a href="https://doi.org/10.1017/S0960129523000427" target="_blank" rel="noopener">A construction of free dcpo-cones</a></p>
+            <p><strong>Yuxu Chen</strong>, Hui Kou, Zhenchao Lyu, and Xiaolin Xie.</p>
+            <p><em>Mathematical Structures in Computer Science</em>, 34(1): 63-79, 2024. <a href="https://doi.org/10.1017/S0960129523000427" target="_blank" rel="noopener">DOI</a></p>
+          </li>
+          <li class="publication">
+            <p class="publication-title"><a href="https://www.math.uh.edu/~hjm/Vol50-4.html" target="_blank" rel="noopener">Free algebras over continuous spaces</a></p>
+            <p><strong>Yuxu Chen</strong>, Hui Kou, and Zhenchao Lyu.</p>
+            <p><em>Houston Journal of Mathematics</em>, 50(4): 751-776, 2024. <a href="https://www.math.uh.edu/~hjm/Vol50-4.html" target="_blank" rel="noopener">Journal</a></p>
+          </li>
+          <li class="publication">
+            <p class="publication-title"><a href="https://doi.org/10.1216/rmj.2024.54.1299" target="_blank" rel="noopener">Upper and lower powerspaces of directed spaces</a></p>
+            <p><strong>Yuxu Chen</strong>, Hui Kou, and Xiaolin Xie.</p>
+            <p><em>Rocky Mountain Journal of Mathematics</em>, 54(5): 1299-1314, 2024. <a href="https://doi.org/10.1216/rmj.2024.54.1299" target="_blank" rel="noopener">DOI</a></p>
+          </li>
+          <li class="publication">
+            <p class="publication-title"><a href="https://doi.org/10.1016/j.tcs.2024.114663" target="_blank" rel="noopener">Upper powerdomains of quasicontinuous dcpos</a></p>
+            <p><strong>Yuxu Chen</strong>, Hui Kou, and Zhenchao Lyu.</p>
+            <p><em>Theoretical Computer Science</em>, 1006: 114663, 2024. <a href="https://doi.org/10.1016/j.tcs.2024.114663" target="_blank" rel="noopener">DOI</a></p>
+          </li>
+          <li class="publication">
+            <p class="publication-title"><a href="https://doi.org/10.19907/j.0490-6756.2024.031005" target="_blank" rel="noopener">S<sup>*</sup>-convergence and locally hypercompact spaces <span lang="zh-CN">（S<sup>*</sup>-收敛和局部强紧空间）</span></a></p>
+            <p><strong>Yuxu Chen</strong> and Hui Kou.</p>
+            <p><em>Journal of Sichuan University (Natural Science Edition)</em>, 61(3): 031005, 2024. <a href="https://doi.org/10.19907/j.0490-6756.2024.031005" target="_blank" rel="noopener">DOI</a></p>
+          </li>
+          <li class="publication">
+            <p class="publication-title"><a href="https://doi.org/10.1016/j.patcog.2024.110751" target="_blank" rel="noopener">Semi-supervised clustering guided by pairwise constraints and local density structures</a></p>
+            <p>Zhiguo Long, Yang Gao, Hua Meng, <strong>Yuxu Chen</strong><sup>*</sup>, and Hui Kou.</p>
+            <p><em>Pattern Recognition</em>, 156: 110751, 2024. <a href="https://doi.org/10.1016/j.patcog.2024.110751" target="_blank" rel="noopener">DOI</a></p>
+          </li>
+        </ol>
+
+        <h3 class="publication-year">Preprints</h3>
+        <ol class="publication-list" start="10">
+          <li class="publication">
+            <p class="publication-title"><a href="https://arxiv.org/abs/2607.00568" target="_blank" rel="noopener">FS-domains are not always RB-domains</a></p>
+            <p><strong>Yuxu Chen</strong>, Hui Kou, and Zhenchao Lyu.</p>
+            <p><em>arXiv preprint</em>, arXiv:2607.00568 [math.GN], 2026. <a href="https://arxiv.org/abs/2607.00568" target="_blank" rel="noopener">arXiv</a></p>
+          </li>
+          <li class="publication">
+            <p class="publication-title"><a href="https://arxiv.org/abs/2607.02231" target="_blank" rel="noopener">Characterizing finite posets whose probabilistic powerdomain are RB-domains</a></p>
+            <p><strong>Yuxu Chen</strong>, Hui Kou, and Zhenchao Lyu.</p>
+            <p><em>arXiv preprint</em>, arXiv:2607.02231 [math.CO], 2026. <a href="https://arxiv.org/abs/2607.02231" target="_blank" rel="noopener">arXiv</a></p>
+          </li>
+          <li class="publication">
+            <p class="publication-title"><a href="https://arxiv.org/abs/2606.07945" target="_blank" rel="noopener">Directed Convex Powerspaces and Convex Powerdomains</a></p>
+            <p><strong>Yuxu Chen</strong>.</p>
+            <p><em>arXiv preprint</em>, arXiv:2606.07945 [math.GN], 2026. <a href="https://arxiv.org/abs/2606.07945" target="_blank" rel="noopener">arXiv</a></p>
+          </li>
+          <li class="publication">
+            <p class="publication-title"><a href="https://arxiv.org/abs/2206.12075" target="_blank" rel="noopener">Monotone determined spaces via ℂ-generated spaces</a></p>
+            <p><strong>Yuxu Chen</strong>, Hui Kou, and Zhenchao Lyu.</p>
+            <p><em>arXiv preprint</em>, arXiv:2206.12075 [math.GN], 2022; revised 2026. <a href="https://arxiv.org/abs/2206.12075" target="_blank" rel="noopener">arXiv</a></p>
+          </li>
+          <li class="publication">
+            <p class="publication-title"><a href="https://arxiv.org/abs/2512.17178" target="_blank" rel="noopener">ABE-CLIP: Training-Free Attribute Binding Enhancement for Compositional Image-Text Matching</a></p>
+            <p>Qi Zhang, <strong>Yuxu Chen</strong>, Lei Deng, and Lili Shen.</p>
+            <p><em>arXiv preprint</em>, arXiv:2512.17178 [cs.CV], 2025. <a href="https://arxiv.org/abs/2512.17178" target="_blank" rel="noopener">arXiv</a></p>
+          </li>
+        </ol>
+      </section>
+
+      <section class="home-section" aria-labelledby="links-title">
+        <h2 id="links-title">External links</h2>
+        <ul>
+          <li><a href="https://github.com/ChanYuxu" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a href="https://github.com/ChanYuxu/Domain-Theory-Seminar" target="_blank" rel="noopener">Domain Theory Seminar</a></li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>© <span data-current-year>2026</span> Yuxu Chen</p>
+    </footer>
+  </div>
+  <script src="/js/academic.js" defer></script>
+</body>
+</html>
