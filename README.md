@@ -12,8 +12,14 @@ The homepage and section pages are dependency-free static HTML/CSS/JavaScript. E
 - `ai4math/paper-to-lean/index.html` — Paper to Lean project article
 - `ai4math/unit-interval-retracts/index.html` — Unit-interval retracts Lean 4 case study
 - `ai4math/rb-function-space-characterization/index.html` — RB-domain function-space Lean 4 case study
+- `ai4math/coherence-homogeneity/index.html` — AI-assisted literature-search and coherence-space case study
+- `ai4math/lipschitz-yoneda-final-topology/index.html` — axiom-audited Lean
+  proof of the Lipschitz Yoneda final-topology headline theorem
 - `downloads/unit-interval-retracts/` — downloadable manuscript PDF and Lean source bundle
 - `downloads/rb-function-space-characterization/` — downloadable manuscript PDF and Lean source bundle
+- `downloads/coherence-homogeneity/` — revised manuscript PDF and Lean source bundle
+- `downloads/lipschitz-yoneda-final-topology/` — manuscript PDF and the
+  claim-ledgered Lean source bundle
 - `notes/index.html` — future research notes
 - `css/academic.css` — shared academic-site design system
 - `js/academic.js` — automatic publication numbering and footer year

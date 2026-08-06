@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="An AI-assisted literature-search case study: primary-source checking corrected an apparent novelty claim about a Rado coherence space while preserving the valid mathematical comparison and Lean formalization.">
+  <meta name="author" content="Yuxu Chen">
+  <meta property="article:published_time" content="2026-08-04">
+  <meta property="article:modified_time" content="2026-08-06">
+  <link rel="canonical" href="https://chanyuxu.github.io/ai4math/coherence-homogeneity/">
+  <link rel="icon" href="/img/favicon.ico">
+  <link rel="stylesheet" href="/css/academic.css">
+  <title>Why use AI for literature search? A coherence-space case study | AI4MATH | Yuxu Chen</title>
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+  <div class="site">
+    <header class="site-header">
+      <a class="site-title" href="/">Yuxu Chen</a>
+      <p class="site-description">Domain Theory and AI for Mathematics</p>
+    </header>
+
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="/">Home</a>
+      <a href="/domain-theory/">Domain Theory</a>
+      <a class="active" href="/ai4math/" aria-current="page">AI4MATH</a>
+      <a href="/notes/">Notes</a>
+    </nav>
+
+    <main id="content" class="content article-layout">
+      <article class="topic-article">
+        <header class="article-header">
+          <p class="article-kicker"><time datetime="2026-08-04">August 4, 2026</time> · updated <time datetime="2026-08-06">August 6, 2026</time> · AI4MATH</p>
+          <h1>Why use AI for literature search? A coherence-space case study</h1>
+          <p class="article-meta">Research-audit case study · revised mathematical note · Lean 4 formalization</p>
+        </header>
+
+        <div class="ai-section-notice" role="note" aria-label="AI content notice">
+          <em>All content in this section is AI-generated. AI may make mistakes; please verify important information carefully.</em>
+        </div>
+
+        <p class="article-lead">This post records a useful correction. Starting from a 2015 coordinate universal coherence space, we proved that it is not ultrahomogeneous and initially treated an arithmetic Rado coherence space as a new homogeneous replacement. An AI-assisted source audit found the exact binary-digit construction in Rado's 1964 paper and a 2002 paper explicitly constructing universal homogeneous objects in coherence spaces and qualitative domains. The mathematics survived; the novelty claim did not.</p>
+
+        <div class="article-result">
+          <strong>Research lesson.</strong> AI is useful here not as an authority on novelty, but as a search and comparison tool. It can connect terminology used in different communities, locate older sources, compare definitions formula by formula, and force a proposed contribution to be stated more narrowly. The final judgement must still be based on verified primary literature.
+        </div>
+
+        <h2>The initial mathematical question</h2>
+        <p>Hui Kou and Haoran Zhao constructed a universal coherence space in 2015 from the compact elements of <em>T</em><sup>&omega;</sup>. In a finite-coordinate presentation, its events are finite partial functions from the natural numbers to {0,1}; two distinct events are coherent exactly when they assign different values at a common coordinate. We write this space as <em>C</em><sub>&omega;</sub>.</p>
+        <p>The empty partial function is coherent only with itself. Every nonempty partial function has a distinct coherent neighbour, obtained by reversing one bit on a coordinate in its domain. The empty function is therefore uniquely definable and fixed by every automorphism. Yet every one-event induced subspace is isomorphic to every other one. The isomorphism sending the empty function to a nonempty function cannot extend to an automorphism, so <em>C</em><sub>&omega;</sub> is not ultrahomogeneous.</p>
+        <p>The supplied 2015 source does not analyse ultrahomogeneity, but it also does not explicitly state this as an open problem. That distinction matters: the argument determines an additional property of the particular construction, but should not be advertised as solving a stated public question without a source that actually asks it.</p>
+
+        <h2>The tempting novelty claim</h2>
+        <p>A natural comparison object is obtained on the natural numbers by declaring distinct <em>m</em> &lt; <em>n</em> coherent when the <em>m</em>-th binary digit of <em>n</em> is 1, then adding the reflexive loops required by the coherence-space convention. The definition is direct rather than recursive. A finite set of desired adjacencies can be encoded into the binary digits of one fresh natural number, giving the extension property and hence universality and ultrahomogeneity.</p>
+        <p>Because the 2015 coordinate paper did not use this construction, it was tempting to describe it as a new explicit homogeneous replacement. That conclusion was incorrect.</p>
+
+        <h2>What the AI-assisted search found</h2>
+        <ol class="article-steps">
+          <li><a href="https://doi.org/10.4064/aa-9-4-331-340" target="_blank" rel="noopener">Rado's 1964 paper</a> already defines the graph directly on the natural numbers using exactly this binary-digit rule. The graph is explicit; only the proof that an arbitrary countable graph embeds into it proceeds inductively.</li>
+          <li><a href="https://doi.org/10.1017/S0960129501003383" target="_blank" rel="noopener">Boldi, Cardone, and Droste (2002)</a> explicitly study universal homogeneous graph-like structures and construct such objects in the categories of coherence spaces and qualitative domains.</li>
+          <li>Adding a loop at each vertex translates a simple graph into the reflexive coherence-space convention. It does not by itself constitute a new homogeneous construction.</li>
+        </ol>
+        <p>Once these sources were checked, the phrase “we give an explicit homogeneous replacement” had to be removed from the mathematical note. The Rado object is now presented as classical background and as a comparison object for <em>C</em><sub>&omega;</sub>.</p>
+
+        <h2>What remains after the correction</h2>
+        <p>The concrete proof that this particular <em>C</em><sub>&omega;</sub> is not ultrahomogeneous remains valid. The revised note compares its exceptional empty event with the finite extension property of the classical Rado graph and explains the induced section&ndash;retraction maps on state domains. A more comprehensive literature review would still be required before asserting that the non-ultrahomogeneity observation itself has never appeared elsewhere.</p>
+        <p>The Lean development also remains useful. It machine-checks the coordinate construction, its exceptional empty event, the non-ultrahomogeneity proof, the classical Rado extension argument, and the set-level retraction and Karoubi equations. Formalizing a classical theorem is valuable verification work, but it does not make that theorem mathematically new.</p>
+
+        <h2>Why use AI in this part of research?</h2>
+        <ol class="article-steps">
+          <li><strong>Terminology matching.</strong> The same object may appear as a random graph, Rado graph, universal homogeneous graph, reflexive coherence graph, or a qualitative-domain carrier.</li>
+          <li><strong>Definition-level comparison.</strong> Comparing the binary formula in the draft with the formula in the 1964 source revealed exact identity, not merely a vague resemblance.</li>
+          <li><strong>Adversarial claim checking.</strong> Asking whether a result is really new is often more valuable than asking for a polished proof of it.</li>
+          <li><strong>Traceable correction.</strong> The source audit now records which claims are classical, which statement concerns the 2015 coordinate object, and which parts are only formalization or exposition.</li>
+        </ol>
+        <p>AI can still hallucinate references, miss papers, or confuse nearby notions. The safe workflow is therefore: use AI to broaden and organize the search, open the primary sources, compare the exact definitions and hypotheses, and then revise the novelty statement conservatively.</p>
+
+        <h2>Verification and trust boundary</h2>
+        <p>The Lean entrypoint and axiom-audit targets compile with Lean <code>v4.30.0-rc2</code> and the repository's pinned Mathlib dependency. The source contains no <code>sorry</code>, <code>admit</code>, or custom <code>axiom</code> declaration. The main declarations depend only on the standard Lean/Mathlib principles reported by <code>#print axioms</code>.</p>
+        <p>The complete categorical semantics of propositional linear logic is not rebuilt in Lean. The appendices about linear traces, formula interpretations, universal retracts, and the ideal-completion description are mathematical exposition. Neither a successful Lean build nor an AI literature search certifies global novelty.</p>
+
+        <h2>Primary references used in the correction</h2>
+        <ul class="article-steps">
+          <li>R. Rado, <a href="https://doi.org/10.4064/aa-9-4-331-340" target="_blank" rel="noopener"><em>Universal graphs and universal functions</em></a>, <em>Acta Arithmetica</em> 9 (1964), 331&ndash;340.</li>
+          <li>P. Boldi, F. Cardone, and M. Droste, <a href="https://doi.org/10.1017/S0960129501003383" target="_blank" rel="noopener"><em>Universal homogeneous graph-like structures and domains</em></a>, <em>Mathematical Structures in Computer Science</em> 12 (2002), 91&ndash;109.</li>
+        </ul>
+
+        <h2>Downloads</h2>
+        <div class="download-grid">
+          <section class="download-card">
+            <h3>Revised mathematical note</h3>
+            <p>The note proves the failure of ultrahomogeneity for the 2015 coordinate construction and compares it with the classical Rado coherence space. The revised version explicitly credits Rado (1964) and Boldi&ndash;Cardone&ndash;Droste (2002) and no longer presents the Rado construction as new. The author field is blank.</p>
+            <a class="download-link" href="/downloads/coherence-homogeneity/homogeneity-universality-coherence-spaces.pdf" download>Download PDF</a>
+            <p class="download-meta">PDF · 10 pages · about 126 KB</p>
+          </section>
+
+          <section class="download-card">
+            <h3>Lean 4 source</h3>
+            <p>The public entrypoint, component modules, axiom audit, revised source-and-novelty audit, formalization-status ledger, and reproducible build commands.</p>
+            <a class="download-link" href="/downloads/coherence-homogeneity/coherence-homogeneity-lean.zip" download>Download Lean source</a>
+            <p class="download-meta">ZIP · about 20 KB · 10 Lean files</p>
+          </section>
+        </div>
+
+        <p class="ai-disclosure">This article was generated by AI.</p>
+      </article>
+
+      <aside class="topic-sidebar" aria-label="AI4MATH article navigation">
+        <div class="topic-sidebar-inner">
+          <h2>AI4MATH</h2>
+          <p>Monthly notes on formalized mathematics, Lean 4, and AI-assisted theorem proving.</p>
+
+          <h3>2026</h3>
+          <nav class="article-nav" aria-label="2026 AI4MATH articles">
+            <a class="active" href="/ai4math/coherence-homogeneity/" aria-current="page">
+              <time datetime="2026-08">August 2026</time>
+              <span>AI-assisted literature search</span>
+            </a>
+            <a href="/ai4math/paper-to-lean/">
+              <time datetime="2026-08">August 2026</time>
+              <span>Paper to Lean</span>
+            </a>
+            <a href="/ai4math/unit-interval-retracts/">
+              <time datetime="2026-08">August 2026</time>
+              <span>Unit-interval retracts in Lean 4</span>
+            </a>
+            <a href="/ai4math/rb-function-space-characterization/">
+              <time datetime="2026-08">August 2026</time>
+              <span>RB function-space characterization</span>
+            </a>
+            <a href="/ai4math/lipschitz-yoneda-final-topology/">
+              <time datetime="2026-08">August 2026</time>
+              <span>Lipschitz Yoneda final topology</span>
+            </a>
+          </nav>
+
+          <div class="sidebar-links">
+            <h3>Related</h3>
+            <a href="https://github.com/ChanYuxu/domain-theory-book-formalization" target="_blank" rel="noopener">Domain theory formalization</a>
+          </div>
+        </div>
+      </aside>
+    </main>
+
+    <footer class="site-footer">
+      <p>© <span data-current-year>2026</span> Yuxu Chen</p>
+    </footer>
+  </div>
+  <script src="/js/academic.js" defer></script>
+</body>
+</html>

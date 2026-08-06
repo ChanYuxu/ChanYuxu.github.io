@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="An axiom-audited Lean 4 proof of the final-topology theorem for continuous Yoneda-complete quasi-metric spaces, answering Goubault-Larrecq's open problem in its generalized form.">
+  <meta name="author" content="Yuxu Chen">
+  <meta property="article:published_time" content="2026-08-02">
+  <link rel="canonical" href="https://chanyuxu.github.io/ai4math/lipschitz-yoneda-final-topology/">
+  <link rel="icon" href="/img/favicon.ico">
+  <link rel="stylesheet" href="/css/academic.css">
+  <title>Final topologies of Lipschitz Yoneda-continuous maps in Lean 4 | AI4MATH | Yuxu Chen</title>
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+  <div class="site">
+    <header class="site-header">
+      <a class="site-title" href="/">Yuxu Chen</a>
+      <p class="site-description">Domain Theory and AI for Mathematics</p>
+    </header>
+
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="/">Home</a>
+      <a href="/domain-theory/">Domain Theory</a>
+      <a class="active" href="/ai4math/" aria-current="page">AI4MATH</a>
+      <a href="/notes/">Notes</a>
+    </nav>
+
+    <main id="content" class="content article-layout">
+      <article class="topic-article">
+        <header class="article-header">
+          <p class="article-kicker"><time datetime="2026-08-02">August 2, 2026</time> · AI4MATH</p>
+          <h1>Final topologies of Lipschitz Yoneda-continuous maps in Lean 4</h1>
+          <p class="article-meta">Mechanized proof · headline theorem formalized</p>
+        </header>
+
+        <div class="ai-section-notice" role="note" aria-label="AI content notice">
+          <em>All content in this section is AI-generated. AI may make mistakes; please verify important information carefully.</em>
+        </div>
+
+        <p class="article-lead">This note reports a Lean 4 proof of the main theorem in a manuscript addressing Jean Goubault-Larrecq's public problem on the topology of Lipschitz Yoneda-continuous function spaces. The formal development contains the argument based on a finitely branching tree of cone functions, the rounded-ideal completion, and the nonexpansive Yoneda-continuous retract used to pass from the algebraic case to every continuous Yoneda-complete quasi-metric space.</p>
+
+        <div class="article-result">
+          <strong>Formalized main theorem.</strong> If <em>X</em> is a continuous Yoneda-complete quasi-metric space, then the topology on <em>L</em><sub>∞</sub>(<em>X</em>) is the final topology determined by its fixed Lipschitz layers. In Lean this is <code>QuasiMetric.IsContinuous.propertyD</code>, an actual theorem with a proof term and no project-specific axiom. The manuscript's separate converse characterization for ordinary metric spaces remains outside the present Lean boundary.
+        </div>
+
+        <h2>Goubault-Larrecq's open problem</h2>
+        <p>In the <a href="https://projects.lsv.ens-paris-saclay.fr/topology/?page_id=1150" target="_blank" rel="noopener">original problem post</a>, Goubault-Larrecq asks whether, for a complete metric space, every subset of <em>L</em><sub>∞</sub>(<em>X</em>) that is open on each fixed layer must already be open globally. Equivalently, is <em>L</em><sub>∞</sub>(<em>X</em>) the topological colimit of the inclusions of the spaces <em>L</em><sub>α</sub>(<em>X</em>)?</p>
+        <p>The same page presents the continuous Yoneda-complete setting as the more general question. The problem was posted on February 23, 2017 and is still shown on the <a href="https://topology.lmf.cnrs.fr/open-problems/" target="_blank" rel="noopener">open-problems index</a> with the label “really tough.” The manuscript proves the final-topology property for continuous Yoneda-complete quasi-metric spaces.</p>
+
+        <h2>The formalized mathematical route</h2>
+        <ol class="article-steps">
+          <li>Reduce the arbitrary positive Lipschitz constants to a cofinal sequence of integer layers.</li>
+          <li>Show that a set open on every layer is upward closed in the pointwise order.</li>
+          <li>In the algebraic case, recursively approximate functions by finite maxima of cones and organize them into a finitely branching tree.</li>
+          <li>Compactify the finite and infinite branches, extract compact saturated test sets, and construct a global compact-open neighborhood.</li>
+          <li>Construct the rounded-ideal formal-ball completion, prove that it is algebraic and Yoneda-complete, and pass back through an explicitly verified nonexpansive Yoneda- and <em>d</em>-Scott-continuous retract.</li>
+        </ol>
+        <p>The proof uses results about function-space topologies from <a href="https://arxiv.org/abs/1707.03784" target="_blank" rel="noopener"><em>Complete Quasi-Metrics for Hyperspaces, Continuous Valuations, and Previsions</em></a> and the formal-ball retract theory developed in <a href="https://arxiv.org/abs/1606.05445" target="_blank" rel="noopener"><em>A Few Notes on Formal Balls</em></a>.</p>
+
+        <h2>What Lean checks</h2>
+        <p>The current bundle contains 38 Lean files and 9,239 lines of Lean source. The following components are kernel checked:</p>
+        <ul class="article-resources">
+          <li>the final-topology property and its quotient-map, universal-continuity, Sierpiński-space, and closed-set characterizations;</li>
+          <li>layer monotonicity, the cofinal integer cover, and equivalence with all positive Lipschitz layers;</li>
+          <li>descent of the final-topology property along a continuous layer-preserving retraction;</li>
+          <li>the upperness lemma for layerwise-open subsets;</li>
+          <li>the asymmetric Lipschitz inequality and minimality of finite cone envelopes;</li>
+          <li>formal-ball center points, the enough-center basis consequence, Scott continuity of the sharp transform, Yoneda continuity of cones, and finite cone interpolation;</li>
+          <li>the recursive construction of the finitely branching tree, strict decrease of heights, increasing formal-ball chains, zero-radius endpoints, and continuity of the path-to-<em>X</em> map;</li>
+          <li>the compact Hausdorff path space of a finite-level forest, open prefix cylinders, and isolation of finite paths;</li>
+          <li>the upper-semicontinuous path-height construction, compact height superlevels and their compact topological saturations;</li>
+          <li>a common positive margin on finite and infinite branches, its propagation to descendants, and the final compact-open neighborhood construction proving the algebraic case;</li>
+          <li>arbitrary pointwise suprema of lower-semicontinuous maps, Scott continuity of precomposition, preservation of every Lipschitz layer, and transfer of the final-topology property along a function-space retraction;</li>
+          <li>rounded ideals, aperture normalization, the Hausdorff quasi-metric, and the order isomorphism between formal balls of the completion and rounded ideals;</li>
+          <li>standardness, continuity, Yoneda completeness, enough center points, and algebraicity of the formal-ball completion;</li>
+          <li>way-below interpolation, the implication from way-below to strict formal-ball approximation, shift invariance, and Scott continuity of the map <em>q</em> ↦ ↓↓<em>q</em>;</li>
+          <li>the section <em>x</em> ↦ ↓↓(<em>x</em>,0), the ideal-supremum projection, nonexpansiveness, Yoneda continuity, <em>d</em>-Scott continuity, and the left-inverse equation;</li>
+          <li>the final composition of the completion retract with the algebraic theorem, yielding <code>QuasiMetric.IsContinuous.propertyD</code> and its universal-continuity corollary;</li>
+          <li>the strict-superlevel identity for the completion supremum formula and its openness consequence from point-evaluation superlevels;</li>
+          <li>the abstract topological equivalence for extension to the formal-ball completion, assuming the required extension and recovery maps;</li>
+          <li>a fully checked counterexample showing that Yoneda completeness is not necessary in general: the natural-number order quasi-metric is not Yoneda complete but its positive Lipschitz layers all coincide and satisfy the final-topology property.</li>
+        </ul>
+
+        <h2>Boundary after the main theorem</h2>
+        <p>The generalized main implication is now checked, but the archive is not a formalization of every theorem in the manuscript. In particular, it does not yet package the standard bridge from ordinary complete metric spaces to the continuous Yoneda-complete hypotheses, nor the converse construction showing failure of the final-topology property for an incomplete metric space. The manuscript's exact metric-space characterization therefore remains outside the Lean boundary.</p>
+        <p>The later simultaneous-extension formula and the criterion using the formal-ball completion are also only partially represented: their abstract topology and strict-superlevel calculation are checked, but the extension operator has not yet been identified with the rounded-ideal formula in one final Lean declaration. The downloadable claim ledger records these remaining boundaries separately from the completed headline theorem.</p>
+
+        <h2>Verification status</h2>
+        <p>The facade target builds successfully with Lean <code>v4.30.0-rc2</code> and Mathlib <code>v4.30.0-rc2</code>: all <code>1691/1691</code> jobs complete. A source scan finds no <code>sorry</code>, <code>admit</code>, project-specific <code>axiom</code>, <code>opaque</code>, or <code>unsafe</code> declaration. <code>#print axioms</code> for the completion retract, the main theorem, and the functional corollary reports only the standard Lean/Mathlib dependencies <code>propext</code>, <code>Classical.choice</code>, and <code>Quot.sound</code>.</p>
+
+        <h2>Downloads</h2>
+        <div class="download-grid">
+          <section class="download-card">
+            <h3>Manuscript PDF</h3>
+            <p>The 13-page manuscript uses the same A4 journal layout as the RB-domain function-space paper. Its author field is blank.</p>
+            <a class="download-link" href="/downloads/lipschitz-yoneda-final-topology/lipschitz-yoneda-final-topology-manuscript.pdf" download>Download PDF</a>
+            <p class="download-meta">PDF · about 180 KB</p>
+          </section>
+
+          <section class="download-card">
+            <h3>Lean 4 source</h3>
+            <p>Thirty-eight Lean files together with the source hash, claim ledger, module map, build instructions, and exact trust-boundary notes.</p>
+            <a class="download-link" href="/downloads/lipschitz-yoneda-final-topology/lipschitz-yoneda-final-topology-lean.zip" download>Download Lean source</a>
+            <p class="download-meta">ZIP · about 118 KB · 38 Lean files · headline theorem proved</p>
+          </section>
+        </div>
+
+        <p class="ai-disclosure">This article was generated by AI.</p>
+      </article>
+
+      <aside class="topic-sidebar" aria-label="AI4MATH article navigation">
+        <div class="topic-sidebar-inner">
+          <h2>AI4MATH</h2>
+          <p>Monthly notes on formalized mathematics, Lean 4, and AI-assisted theorem proving.</p>
+
+          <h3>2026</h3>
+          <nav class="article-nav" aria-label="2026 AI4MATH articles">
+            <a href="/ai4math/coherence-homogeneity/">
+              <time datetime="2026-08">August 2026</time>
+              <span>AI-assisted literature search</span>
+            </a>
+            <a href="/ai4math/paper-to-lean/">
+              <time datetime="2026-08">August 2026</time>
+              <span>Paper to Lean</span>
+            </a>
+            <a href="/ai4math/unit-interval-retracts/">
+              <time datetime="2026-08">August 2026</time>
+              <span>Unit-interval retracts in Lean 4</span>
+            </a>
+            <a href="/ai4math/rb-function-space-characterization/">
+              <time datetime="2026-08">August 2026</time>
+              <span>RB function-space characterization</span>
+            </a>
+            <a class="active" href="/ai4math/lipschitz-yoneda-final-topology/" aria-current="page">
+              <time datetime="2026-08">August 2026</time>
+              <span>Lipschitz Yoneda final topology</span>
+            </a>
+          </nav>
+
+          <div class="sidebar-links">
+            <h3>Related</h3>
+            <a href="https://projects.lsv.ens-paris-saclay.fr/topology/?page_id=1150" target="_blank" rel="noopener">Original open problem</a>
+            <a href="https://github.com/ChanYuxu/domain-theory-book-formalization" target="_blank" rel="noopener">Domain theory formalization</a>
+          </div>
+        </div>
+      </aside>
+    </main>
+
+    <footer class="site-footer">
+      <p>© <span data-current-year>2026</span> Yuxu Chen</p>
+    </footer>
+  </div>
+  <script src="/js/academic.js" defer></script>
+</body>
+</html>

@@ -141,11 +141,14 @@ a:hover {
   margin-bottom: 34px;
 }
 
-.photo-placeholder {
+.profile-photo {
+  display: block;
   width: 174px;
-  height: 218px;
-  background: #f4f4f4;
+  height: 174px;
+  object-fit: cover;
+  background: #ffffff;
   border: 1px solid #dddddd;
+  border-radius: 50%;
 }
 
 .profile-details {
@@ -306,6 +309,23 @@ a:hover {
 
 .topic-article p {
   margin: 0 0 16px;
+}
+
+.topic-article code {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.ai-section-notice {
+  margin: 0 0 24px;
+  padding: 11px 14px;
+  color: #6b6254;
+  background: #faf8f3;
+  border-left: 3px solid #cdbf9f;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 12px;
+  font-style: italic;
+  line-height: 1.65;
 }
 
 .article-lead {
@@ -565,9 +585,9 @@ a:hover {
     gap: 24px;
   }
 
-  .photo-placeholder {
+  .profile-photo {
     width: 126px;
-    height: 158px;
+    height: 126px;
   }
 
   .contact-indent {
@@ -611,9 +631,9 @@ a:hover {
     grid-template-columns: 1fr;
   }
 
-  .photo-placeholder {
+  .profile-photo {
     width: 150px;
-    height: 188px;
+    height: 150px;
   }
 
   .topic-article h1 {
