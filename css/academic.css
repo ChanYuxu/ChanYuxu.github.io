@@ -424,6 +424,35 @@ a:hover {
   font-size: 11px;
 }
 
+.pdf-preview {
+  margin: 16px 0 27px;
+  padding: 12px;
+  background: #f6f7f7;
+  border: 1px solid var(--line);
+}
+
+.pdf-preview-frame {
+  display: block;
+  width: 100%;
+  min-height: 500px;
+  aspect-ratio: 16 / 10;
+  background: #ffffff;
+  border: 0;
+}
+
+.pdf-preview-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.pdf-preview-meta {
+  margin: 10px 0 0 !important;
+  color: var(--muted);
+  font-size: 11px;
+}
+
 .topic-article .ai-disclosure {
   margin: 36px 0 0;
   color: var(--muted);
@@ -601,6 +630,11 @@ a:hover {
 
   .download-grid {
     grid-template-columns: 1fr;
+  }
+
+  .pdf-preview-frame {
+    min-height: 360px;
+    aspect-ratio: 4 / 5;
   }
 
   .site-footer {

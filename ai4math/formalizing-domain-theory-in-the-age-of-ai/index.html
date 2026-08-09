@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="Notes and slides from a talk on AI4Math, Lean 4, an auditable TeX-to-Lean workflow, and the formalization of classical Domain Theory.">
+  <meta name="author" content="Yuxu Chen">
+  <meta property="article:published_time" content="2026-08-09">
+  <link rel="canonical" href="https://chanyuxu.github.io/ai4math/formalizing-domain-theory-in-the-age-of-ai/">
+  <link rel="icon" href="/img/favicon.ico">
+  <link rel="stylesheet" href="/css/academic.css">
+  <title>Formalizing Domain Theory in the Age of AI | AI4MATH | Yuxu Chen</title>
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+  <div class="site">
+    <header class="site-header">
+      <a class="site-title" href="/">Yuxu Chen</a>
+      <p class="site-description">Domain Theory and AI for Mathematics</p>
+    </header>
+
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="/">Home</a>
+      <a href="/domain-theory/">Domain Theory</a>
+      <a class="active" href="/ai4math/" aria-current="page">AI4MATH</a>
+      <a href="/notes/">Notes</a>
+    </nav>
+
+    <main id="content" class="content article-layout">
+      <article class="topic-article">
+        <header class="article-header">
+          <p class="article-kicker"><time datetime="2026-08-09">August 9, 2026</time> · AI4MATH</p>
+          <h1>Formalizing Domain Theory in the Age of AI</h1>
+          <p class="article-meta">Talk notes · Lean 4 · formal verification workflow</p>
+        </header>
+
+        <div class="ai-section-notice" role="note" aria-label="AI content notice">
+          <em>All content in this section is AI-generated. AI may make mistakes; please verify important information carefully.</em>
+        </div>
+
+        <p class="article-lead">This article accompanies a talk presented at the 11th International Symposium on Domain Theory and Its Applications in Chengdu on August 6, 2026. The talk asks how mathematical practice should respond when AI can produce candidate arguments faster than people can reliably check, understand, and integrate them.</p>
+
+        <div class="article-result">
+          <strong>Central point.</strong> The important change is not simply that more proofs may be generated. It is that plausible proof production can grow faster than verification capacity. A useful AI-era workflow must therefore keep source fidelity, formal checking, independent review, proof debt, and later revision visible.
+        </div>
+
+        <h2>A change in the mathematical bottleneck</h2>
+        <p>The opening part of the talk describes three pressures on mathematical practice: trust, attention, and professional identity. A fluent argument can still contain a hidden error or a changed assumption; a large volume of candidate results can exceed the attention available for careful review; and increasingly capable systems raise questions about which parts of research should remain human responsibilities.</p>
+        <p>The examples of recent AI4Math progress in the slides are a dated snapshot of public reports available when the talk was prepared. They motivate the workflow question, but they are not themselves evidence that generation, verification, exposition, and mathematical significance have become the same task.</p>
+        <p>The proposed division of labour is deliberately conservative. Humans choose questions, specify meanings, and decide what belongs in a mathematical theory. Models may propose arguments and translations. Lean checks the formal object that was actually encoded. Reviewers examine whether that encoding faithfully represents the source mathematics and whether the result deserves attention.</p>
+
+        <h2>Why Lean 4 enters the workflow</h2>
+        <p>Lean represents a proposition as a type and a proof as a term of that type. Its kernel can check whether the term has the claimed type. This gives a deterministic acceptance gate for the encoded statement, but it does not remove the need to inspect definitions, hypotheses, imports, axioms, or the translation from prose.</p>
+        <p>The talk illustrates this boundary with Scott continuity. The order-theoretic definition uses monotonicity and preservation of directed suprema; the topological definition uses inverse images of Scott-open sets. Proposition 2.3.4 of Abramsky and Jung identifies these formulations. The corresponding Lean development records the definitions and both directions of the equivalence, so the theorem can be checked against the source rather than presented only as a polished final statement.</p>
+
+        <h2>An auditable TeX-to-Lean loop</h2>
+        <p>The VeriLoop diagram in the slides organizes translation and proof construction into a sequence of reviewable stages:</p>
+        <ol class="article-steps">
+          <li><strong>Source intake.</strong> Read the complete source and create one tracked target for each mathematical claim.</li>
+          <li><strong>Dependency graph.</strong> Record which definitions and results each target requires.</li>
+          <li><strong>Lean skeleton.</strong> Create stable declaration boundaries and check the whole file early.</li>
+          <li><strong>Statement freeze.</strong> Elaborate the translated statement, review it against the source, and record a digest before proof search.</li>
+          <li><strong>Proof loop.</strong> Let models propose proof terms, then accept or reject them through Lean while preserving diagnostics and unresolved debt.</li>
+          <li><strong>Acceptance audit.</strong> Run the full build and inspect axioms, admissions, dependency boundaries, and the independent review record.</li>
+          <li><strong>Report and revise.</strong> Publish evidence about what is proved, what remains conditional, and which later edits require a new review.</li>
+        </ol>
+        <p>The governing principle is simple: models propose; independent review and deterministic Lean gates decide. A successful build is necessary evidence, but it is not by itself a source-fidelity or completeness certificate.</p>
+
+        <h2>A Domain Theory counterexample as a worked case</h2>
+        <p>The concrete example concerns two questions of Xu about quasicontinuous nonquasialgebraic dcpos and the unit interval. The candidate dcpo is built from singletons and nondegenerate dyadic closed intervals in <em>[0,1]</em>, ordered by reverse inclusion. The mathematical obstruction is that every chain in this dcpo is countable, whereas <em>[0,1]</em> is an uncountable chain. Consequently there is no order embedding of the unit interval into the constructed dcpo, and hence no Scott-continuous retraction onto it.</p>
+        <p>In the project snapshot reported in the talk, the focused development consists of 17 Lean modules and 3,809 lines. It packages the lattice construction, finite approximants, quasicontinuity, noncontinuity, nonquasialgebraicity, countability of chains, and the final no-embedding and no-retraction statements. These numbers describe that checked target at the time of the presentation; they are not a claim that every surrounding manuscript statement has been formalized.</p>
+
+        <h2>From one result to reusable infrastructure</h2>
+        <p>The longer project translates the corrected and expanded Abramsky–Jung chapter on Domain Theory into Lean. Its goals are source fidelity, explicit proof boundaries, a reusable Mathlib-oriented API, and an interface through which mathematicians can compare book passages with declarations and review decisions.</p>
+        <p>The Chapter 2 slide reports 57 mapped source items and reviewed TeX overrides for all 57. It also reports three explicit local axioms and two book-omitted proofs represented as admissions. Those obligations remain visible precisely because a green focused build should not be confused with completion of the chapter or independence from every external interface.</p>
+
+        <h2>Two possible futures</h2>
+        <p>The concluding slide contrasts mathematicians amplified by AI with mathematicians displaced by it. In the first future, AI broadens exploration while people retain responsibility for questions, meaning, theory building, and judgement. In the second, output grows while human participation and attention become optional.</p>
+        <p>Formal verification does not choose between these futures automatically. It is infrastructure for making claims inspectable and cumulative. Its value depends on the surrounding norms: honest statement translation, visible assumptions, reproducible builds, literature checking, independent review, and willingness to revise a claim when the evidence changes.</p>
+
+        <h2 id="slides">Slides</h2>
+        <p>The embedded viewer contains the complete 22-page static slide deck. Use its controls to move between pages. If your browser does not display embedded PDFs, open the slides in a new tab or download the same file below.</p>
+        <div class="pdf-preview" aria-label="Preview of Formalizing Domain Theory in the Age of AI slides">
+          <iframe
+            class="pdf-preview-frame"
+            src="/downloads/formalizing-domain-theory-in-the-age-of-ai/formalizing-domain-theory-in-the-age-of-ai-slides.pdf#page=1&amp;view=FitH"
+            title="Formalizing Domain Theory in the Age of AI slide preview"
+            loading="lazy"></iframe>
+          <div class="pdf-preview-actions">
+            <a class="project-link" href="/downloads/formalizing-domain-theory-in-the-age-of-ai/formalizing-domain-theory-in-the-age-of-ai-slides.pdf" target="_blank" rel="noopener">Open slides in a new tab</a>
+            <a class="download-link" href="/downloads/formalizing-domain-theory-in-the-age-of-ai/formalizing-domain-theory-in-the-age-of-ai-slides.pdf" download>Download PDF</a>
+          </div>
+          <p class="pdf-preview-meta">PDF · 22 slides · 16:9 · about 1.3 MB</p>
+        </div>
+
+        <p class="ai-disclosure">This article was generated by AI.</p>
+      </article>
+
+      <aside class="topic-sidebar" aria-label="AI4MATH article navigation">
+        <div class="topic-sidebar-inner">
+          <h2>AI4MATH</h2>
+          <p>Monthly notes on formalized mathematics, Lean 4, and AI-assisted theorem proving.</p>
+
+          <h3>2026</h3>
+          <nav class="article-nav" aria-label="2026 AI4MATH articles">
+            <a class="active" href="/ai4math/formalizing-domain-theory-in-the-age-of-ai/" aria-current="page">
+              <time datetime="2026-08">August 2026</time>
+              <span>Domain Theory in the age of AI</span>
+            </a>
+            <a href="/ai4math/coherence-homogeneity/">
+              <time datetime="2026-08">August 2026</time>
+              <span>AI-assisted literature search</span>
+            </a>
+            <a href="/ai4math/paper-to-lean/">
+              <time datetime="2026-08">August 2026</time>
+              <span>Paper to Lean</span>
+            </a>
+            <a href="/ai4math/unit-interval-retracts/">
+              <time datetime="2026-08">August 2026</time>
+              <span>Unit-interval retracts in Lean 4</span>
+            </a>
+            <a href="/ai4math/rb-function-space-characterization/">
+              <time datetime="2026-08">August 2026</time>
+              <span>RB function-space characterization</span>
+            </a>
+            <a href="/ai4math/lipschitz-yoneda-final-topology/">
+              <time datetime="2026-08">August 2026</time>
+              <span>Lipschitz Yoneda final topology</span>
+            </a>
+          </nav>
+
+          <div class="sidebar-links">
+            <h3>Related</h3>
+            <a href="https://github.com/ChanYuxu/domain-theory-book-formalization" target="_blank" rel="noopener">Domain theory formalization</a>
+            <a href="/ai4math/unit-interval-retracts/">Counterexample case study</a>
+          </div>
+        </div>
+      </aside>
+    </main>
+
+    <footer class="site-footer">
+      <p>© <span data-current-year>2026</span> Yuxu Chen</p>
+    </footer>
+  </div>
+  <script src="/js/academic.js" defer></script>
+</body>
+</html>
