@@ -6,6 +6,7 @@
   <meta name="theme-color" content="#ffffff">
   <meta name="description" content="An AI-assisted literature-search case study: primary-source checking corrected an apparent novelty claim about a Rado coherence space while preserving the valid mathematical comparison and Lean formalization.">
   <meta name="author" content="Yuxu Chen">
+  <meta name="section-label" content="AI-assisted literature search">
   <meta property="article:published_time" content="2026-08-04">
   <meta property="article:modified_time" content="2026-08-06">
   <link rel="canonical" href="https://chanyuxu.github.io/ai4math/coherence-homogeneity/">
@@ -23,9 +24,9 @@
 
     <nav class="site-nav" aria-label="Main navigation">
       <a href="/">Home</a>
-      <a href="/domain-theory/">Domain Theory</a>
-      <a class="active" href="/ai4math/" aria-current="page">AI4MATH</a>
-      <a href="/notes/">Notes</a>
+      <a href="/domain-theory/" data-latest-section="domain-theory">Domain Theory</a>
+      <a class="active" href="/ai4math/" data-latest-section="ai4math" aria-current="page">AI4MATH</a>
+      <a href="/notes/" data-latest-section="notes">Notes</a>
     </nav>
 
     <main id="content" class="content article-layout">
@@ -111,8 +112,8 @@
           <h2>AI4MATH</h2>
           <p>Monthly notes on formalized mathematics, Lean 4, and AI-assisted theorem proving.</p>
 
-          <h3>2026</h3>
-          <nav class="article-nav" aria-label="2026 AI4MATH articles">
+          <h3>Articles</h3>
+          <nav class="article-nav" data-article-section="ai4math" aria-label="AI4MATH articles">
             <a href="/ai4math/formalizing-domain-theory-in-the-age-of-ai/">
               <time datetime="2026-08">August 2026</time>
               <span>Domain Theory in the age of AI</span>

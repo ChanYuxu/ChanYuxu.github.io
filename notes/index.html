@@ -1,17 +1,17 @@
 <!doctype html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#ffffff">
-  <meta name="description" content="Research notes and reflections by Yuxu Chen.">
+  <meta name="description" content="陈俣旭最新的 Notes 文章。">
   <meta name="author" content="Yuxu Chen">
   <link rel="canonical" href="https://chanyuxu.github.io/notes/">
   <link rel="icon" href="/img/favicon.ico">
   <link rel="stylesheet" href="/css/academic.css">
-  <title>Notes | Yuxu Chen</title>
+  <title>Latest Notes article | Yuxu Chen</title>
 </head>
-<body>
+<body data-section-landing="notes">
   <a class="skip-link" href="#content">Skip to content</a>
   <div class="site">
     <header class="site-header">
@@ -21,14 +21,23 @@
 
     <nav class="site-nav" aria-label="Main navigation">
       <a href="/">Home</a>
-      <a href="/domain-theory/">Domain Theory</a>
-      <a href="/ai4math/">AI4MATH</a>
-      <a class="active" href="/notes/" aria-current="page">Notes</a>
+      <a href="/domain-theory/" data-latest-section="domain-theory">Domain Theory</a>
+      <a href="/ai4math/" data-latest-section="ai4math">AI4MATH</a>
+      <a class="active" href="/notes/" data-latest-section="notes" aria-current="page">Notes</a>
     </nav>
 
     <main id="content" class="content">
-      <h1 class="page-title">Notes</h1>
-      <p class="page-intro">Substantive research notes and longer reflections will be added here.</p>
+      <article class="topic-article">
+        <header class="article-header">
+          <p class="article-kicker">Notes</p>
+          <h1>正在打开最新文章</h1>
+        </header>
+        <p data-latest-status>正在从文章索引中选择最新的 Notes 文章。</p>
+        <p><a data-latest-fallback href="/notes/xiaofanpu-ai-cooking-app/">继续阅读当前最新文章</a></p>
+        <noscript>
+          <p>自动选择最新文章需要 JavaScript。<a data-latest-fallback href="/notes/xiaofanpu-ai-cooking-app/">打开当前最新的 Notes 文章</a>。</p>
+        </noscript>
+      </article>
     </main>
 
     <footer class="site-footer">

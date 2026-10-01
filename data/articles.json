@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "sections": {
+    "domain-theory": [
+      {
+        "path": "/domain-theory/finite-valuation-approximable-domains/",
+        "published": "2026-08-08",
+        "label": "Finite-valuation approximable domains",
+        "title": "Finite-valuation approximable domains and the Jung–Tix problem"
+      },
+      {
+        "path": "/domain-theory/fs-domains-are-not-always-rb-domains/",
+        "published": "2026-07-14",
+        "label": "FS-domains are not always RB-domains",
+        "title": "FS-domains are not always RB-domains"
+      }
+    ],
+    "ai4math": [
+      {
+        "path": "/ai4math/formalizing-domain-theory-in-the-age-of-ai/",
+        "published": "2026-08-09",
+        "label": "Domain Theory in the age of AI",
+        "title": "Formalizing Domain Theory in the Age of AI"
+      },
+      {
+        "path": "/ai4math/coherence-homogeneity/",
+        "published": "2026-08-04",
+        "label": "AI-assisted literature search",
+        "title": "Why use AI for literature search? A coherence-space case study"
+      },
+      {
+        "path": "/ai4math/lipschitz-yoneda-final-topology/",
+        "published": "2026-08-02",
+        "label": "Lipschitz Yoneda final topology",
+        "title": "Final topologies of Lipschitz Yoneda-continuous maps in Lean 4"
+      },
+      {
+        "path": "/ai4math/rb-function-space-characterization/",
+        "published": "2026-08-02",
+        "label": "RB function-space characterization",
+        "title": "A function-space characterization of RB-domains in Lean 4"
+      },
+      {
+        "path": "/ai4math/paper-to-lean/",
+        "published": "2026-08-01",
+        "label": "Paper to Lean",
+        "title": "Paper to Lean: auditable translation from mathematical text to Lean 4"
+      },
+      {
+        "path": "/ai4math/unit-interval-retracts/",
+        "published": "2026-08-01",
+        "label": "Unit-interval retracts in Lean 4",
+        "title": "Unit-interval retracts in Lean 4"
+      }
+    ],
+    "notes": [
+      {
+        "path": "/notes/xiaofanpu-ai-cooking-app/",
+        "published": "2026-08-20",
+        "label": "小饭谱：AI 家庭做饭助手",
+        "title": "小饭谱：用 AI 把“今天吃什么”变成一个手机 App"
+      }
+    ]
+  }
+}

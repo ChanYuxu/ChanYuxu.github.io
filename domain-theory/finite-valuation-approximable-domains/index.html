@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="An introduction to finite-valuation approximable domains and a positive solution to the category-existence form of the Jung--Tix problem for probabilistic powerdomains.">
+  <meta name="author" content="Yuxu Chen">
+  <meta name="section-label" content="Finite-valuation approximable domains">
+  <meta property="article:published_time" content="2026-08-08">
+  <link rel="canonical" href="https://chanyuxu.github.io/domain-theory/finite-valuation-approximable-domains/">
+  <link rel="icon" href="/img/favicon.ico">
+  <link rel="stylesheet" href="/css/academic.css">
+  <title>Finite-valuation approximable domains and the Jung--Tix problem | Yuxu Chen</title>
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+  <div class="site">
+    <header class="site-header">
+      <a class="site-title" href="/">Yuxu Chen</a>
+      <p class="site-description">Domain Theory and AI for Mathematics</p>
+    </header>
+
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="/">Home</a>
+      <a class="active" href="/domain-theory/" data-latest-section="domain-theory" aria-current="page">Domain Theory</a>
+      <a href="/ai4math/" data-latest-section="ai4math">AI4MATH</a>
+      <a href="/notes/" data-latest-section="notes">Notes</a>
+    </nav>
+
+    <main id="content" class="content article-layout">
+      <article class="topic-article">
+        <header class="article-header">
+          <p class="article-kicker"><time datetime="2026-08-08">August 8, 2026</time> · Domain Theory</p>
+          <h1>Finite-valuation approximable domains and the Jung&ndash;Tix problem</h1>
+          <p class="article-meta">Yuxu Chen, Hui Kou, and Zhenchao Lyu</p>
+        </header>
+
+        <p class="article-lead">Higher-order probabilistic semantics needs two structures at once: function spaces for higher-order computation and valuation powerdomains for probabilistic choice. For nearly three decades, the Jung&ndash;Tix problem has asked whether these requirements can coexist inside a natural full category of domains. Our new work gives a positive answer to its category-existence, or generalized, form.</p>
+
+        <div class="article-result">
+          <strong>Main result.</strong> We introduce the category <strong>&omega;FVA</strong> of finite-valuation approximable domains. It is a full Cartesian closed subcategory of pointed countably based FS-domains and is closed under both the subprobability and probability valuation powerdomains. Consequently, both valuation monads restrict to <strong>&omega;FVA</strong>.
+        </div>
+
+        <h2>The compatibility problem</h2>
+        <p>Cartesian closed categories provide function-space objects [<em>X</em> &rarr; <em>Y</em>] and therefore support higher-order types. Continuous valuations, on the other hand, provide the probabilistic powerdomains <em>V</em><sub>&le;1</sub>(<em>D</em>) and <em>V</em><sub>1</sub>(<em>D</em>). The difficulty is that the class of all continuous domains is not Cartesian closed, while the familiar Cartesian closed subclasses with strong finite-approximation properties were not known to be preserved by probabilistic powerdomains.</p>
+        <p>Jung and Tix isolated this tension in the 1990s. Their finite-tree results showed both the promise of finite approximation and the difficulty of extending it. The present paper addresses the category-existence formulation: it constructs a nontrivial full Cartesian closed class of continuous domains on which the two valuation constructions remain internal. This is the precise sense in which the paper gives a positive solution; it does not assert that every FS-domain or every RB-domain is preserved by probabilistic powerdomains.</p>
+
+        <h2>First step: probabilistic powerdomains of finite posets</h2>
+        <p>The first part of the proof settles a basic finite case. For every finite poset <em>P</em>, the subprobability valuation domain <em>V</em><sub>&le;1</sub>(<em>P</em>) is a countably based FS-domain. The proof constructs an explicit increasing FS approximate identity by moving valuation mass downward from the maximal points of its current support. Carefully separated erosion rates keep the construction monotone for the stochastic order.</p>
+        <p>The probability case has a sharp boundary: for a finite nonempty poset <em>Q</em>, <em>V</em><sub>1</sub>(<em>Q</em>) is an FS-domain exactly when <em>Q</em> has a least element. Without a least element, the probability powerdomain contains infinitely many minimal valuations, which no finite separator can cover.</p>
+
+        <h2>The new approximation principle</h2>
+        <p>The finite valuation spaces are then used as building blocks for general domains. A domain <em>D</em> is finite-valuation approximable when its identity is the pointwise supremum of an increasing sequence of maps of the form</p>
+        <div class="article-result">
+          <strong>Approximation pattern.</strong>
+          <em>D</em> &rarr; <em>V</em><sub>&le;1</sub>(<em>P</em><sub><em>n</em></sub>) &rarr; <em>D</em>,
+          where each <em>P</em><sub><em>n</em></sub> is finite and the resulting self-maps increase pointwise to the identity.
+        </div>
+        <p>The first map can be read as a finite probabilistic encoding and the second as a reconstruction. Unlike the finite-image deflations used to define RB-domains, the intermediate valuation space is generally infinite, and no retraction equation is required. What remains finite is the underlying order data controlling each approximation stage.</p>
+
+        <h2>The closure theorem</h2>
+        <p>A finite-separation saturation theorem and a unified stochastic-kernel lifting argument establish the required closure properties:</p>
+        <ul class="article-steps">
+          <li>every object of <strong>&omega;FVA</strong> is a pointed countably based FS-domain;</li>
+          <li>the category contains the terminal dcpo and is closed under Scott-continuous retracts and finite products;</li>
+          <li>if <em>X</em> and <em>Y</em> belong to <strong>&omega;FVA</strong>, then the function space [<em>X</em> &rarr; <em>Y</em>] also belongs to <strong>&omega;FVA</strong>;</li>
+          <li>both <em>V</em><sub>&le;1</sub>(<em>D</em>) and <em>V</em><sub>1</sub>(<em>D</em>) remain in <strong>&omega;FVA</strong>.</li>
+        </ul>
+        <p>Thus higher-order functions and probabilistic effects coexist in one full category with all Scott-continuous maps as morphisms.</p>
+
+        <h2>Where the new class sits</h2>
+        <p>The new class is strictly larger than the countably based bc-domains and strictly smaller than the pointed countably based FS-domains. It is also incomparable with the class of RB-domains: some finite-valuation approximable domains are not RB-domains, while a finite RB-domain constructed in the paper is not finite-valuation approximable. This shows that the construction is not merely a reformulation of an existing approximation class.</p>
+
+        <h2>Why the result matters</h2>
+        <p>The main conceptual move is to replace finite-image approximation by approximation through valuation spaces generated by finite posets. This retains finite combinatorial control while allowing the intermediate objects to carry genuine probabilistic structure. The resulting category provides a new domain-theoretic setting in which higher-order function types and probabilistic choice are simultaneously available.</p>
+
+        <h2>Read the paper</h2>
+        <ul class="article-resources">
+          <li><a href="https://arxiv.org/abs/2608.03073" target="_blank" rel="noopener">Abstract and bibliographic record on arXiv</a></li>
+          <li><a href="https://arxiv.org/html/2608.03073" target="_blank" rel="noopener">Experimental HTML version</a></li>
+          <li><a href="https://arxiv.org/pdf/2608.03073" target="_blank" rel="noopener">Download the 43-page preprint</a></li>
+        </ul>
+
+        <p class="ai-disclosure">This article was generated by AI and reviewed against the arXiv preprint.</p>
+      </article>
+
+      <aside class="topic-sidebar" aria-label="Domain Theory article navigation">
+        <div class="topic-sidebar-inner">
+          <h2>Domain Theory</h2>
+          <p>Monthly notes on domain theory, ordered topology, and semantics.</p>
+
+          <h3>Articles</h3>
+          <nav class="article-nav" data-article-section="domain-theory" aria-label="Domain Theory articles">
+            <a class="active" href="/domain-theory/finite-valuation-approximable-domains/" aria-current="page">
+              <time datetime="2026-08">August 2026</time>
+              <span>Finite-valuation approximable domains</span>
+            </a>
+            <a href="/domain-theory/fs-domains-are-not-always-rb-domains/">
+              <time datetime="2026-07">July 2026</time>
+              <span>FS-domains are not always RB-domains</span>
+            </a>
+          </nav>
+
+          <div class="sidebar-links">
+            <h3>Related</h3>
+            <a href="https://github.com/ChanYuxu/Domain-Theory-Seminar" target="_blank" rel="noopener">Domain Theory Seminar</a>
+          </div>
+        </div>
+      </aside>
+    </main>
+
+    <footer class="site-footer">
+      <p>© <span data-current-year>2026</span> Yuxu Chen</p>
+    </footer>
+  </div>
+  <script src="/js/academic.js" defer></script>
+</body>
+</html>

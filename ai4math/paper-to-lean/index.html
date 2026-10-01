@@ -6,6 +6,7 @@
   <meta name="theme-color" content="#ffffff">
   <meta name="description" content="Introducing Paper to Lean, an auditable workflow for translating mathematical text into Lean 4.">
   <meta name="author" content="Yuxu Chen">
+  <meta name="section-label" content="Paper to Lean">
   <meta property="article:published_time" content="2026-08-01">
   <link rel="canonical" href="https://chanyuxu.github.io/ai4math/paper-to-lean/">
   <link rel="icon" href="/img/favicon.ico">
@@ -22,9 +23,9 @@
 
     <nav class="site-nav" aria-label="Main navigation">
       <a href="/">Home</a>
-      <a href="/domain-theory/">Domain Theory</a>
-      <a class="active" href="/ai4math/" aria-current="page">AI4MATH</a>
-      <a href="/notes/">Notes</a>
+      <a href="/domain-theory/" data-latest-section="domain-theory">Domain Theory</a>
+      <a class="active" href="/ai4math/" data-latest-section="ai4math" aria-current="page">AI4MATH</a>
+      <a href="/notes/" data-latest-section="notes">Notes</a>
     </nav>
 
     <main id="content" class="content article-layout">
@@ -71,8 +72,8 @@
           <h2>AI4MATH</h2>
           <p>Monthly notes on formalized mathematics, Lean 4, and AI-assisted theorem proving.</p>
 
-          <h3>2026</h3>
-          <nav class="article-nav" aria-label="2026 AI4MATH articles">
+          <h3>Articles</h3>
+          <nav class="article-nav" data-article-section="ai4math" aria-label="AI4MATH articles">
             <a href="/ai4math/formalizing-domain-theory-in-the-age-of-ai/">
               <time datetime="2026-08">August 2026</time>
               <span>Domain Theory in the age of AI</span>
@@ -85,7 +86,7 @@
               <time datetime="2026-08">August 2026</time>
               <span>Paper to Lean</span>
             </a>
-            <a href="/ai4math/">
+            <a href="/ai4math/unit-interval-retracts/">
               <time datetime="2026-08">August 2026</time>
               <span>Unit-interval retracts in Lean 4</span>
             </a>

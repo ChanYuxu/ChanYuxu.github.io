@@ -335,6 +335,25 @@ a:hover {
   line-height: 1.7;
 }
 
+.project-icon-figure {
+  margin: 7px 0 28px;
+  text-align: center;
+}
+
+.project-icon-figure img {
+  display: block;
+  width: 144px;
+  height: 144px;
+  margin: 0 auto 10px;
+  border-radius: 28px;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.12);
+}
+
+.project-icon-figure figcaption {
+  color: var(--muted);
+  font-size: 11px;
+}
+
 .topic-article h2 {
   margin: 32px 0 11px;
   color: #3b3b3b;
@@ -379,6 +398,10 @@ a:hover {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 16px;
   margin-top: 14px;
+}
+
+.download-grid-single {
+  grid-template-columns: minmax(0, 1fr);
 }
 
 .download-card {
