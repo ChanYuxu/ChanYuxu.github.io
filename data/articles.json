@@ -17,6 +17,12 @@
     ],
     "ai4math": [
       {
+        "path": "/ai4math/point-continuous-central-valuations/",
+        "published": "2026-10-13",
+        "label": "Point-continuous and central valuations",
+        "title": "Point-Continuous and Central Valuations"
+      },
+      {
         "path": "/ai4math/formalizing-domain-theory-in-the-age-of-ai/",
         "published": "2026-08-09",
         "label": "Domain Theory in the age of AI",

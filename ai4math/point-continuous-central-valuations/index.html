@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="A manuscript note on point-continuous and central valuations, countable spaces, the Sorgenfrey-Smyth dcpo, and Fubini objects.">
+  <meta name="author" content="Yuxu Chen">
+  <meta name="section-label" content="Point-continuous and central valuations">
+  <meta property="article:published_time" content="2026-10-13">
+  <link rel="canonical" href="https://chanyuxu.github.io/ai4math/point-continuous-central-valuations/">
+  <link rel="icon" href="/img/favicon.ico">
+  <link rel="stylesheet" href="/css/academic.css">
+  <title>Point-Continuous and Central Valuations | AI4MATH | Yuxu Chen</title>
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+  <div class="site">
+    <header class="site-header">
+      <a class="site-title" href="/">Yuxu Chen</a>
+      <p class="site-description">Domain Theory and AI for Mathematics</p>
+    </header>
+
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="/">Home</a>
+      <a href="/domain-theory/" data-latest-section="domain-theory">Domain Theory</a>
+      <a class="active" href="/ai4math/" data-latest-section="ai4math" aria-current="page">AI4MATH</a>
+      <a href="/notes/" data-latest-section="notes">Notes</a>
+    </nav>
+
+    <main id="content" class="content article-layout">
+      <article class="topic-article">
+        <header class="article-header">
+          <p class="article-kicker"><time datetime="2026-10-13">October 13, 2026</time> · AI4MATH</p>
+          <h1>Point-Continuous and Central Valuations</h1>
+          <p class="article-meta">Countable spaces · Sorgenfrey-Smyth dcpo · Fubini objects</p>
+        </header>
+
+        <div class="ai-section-notice" role="note" aria-label="AI content notice">
+          <em>All content in this section is AI-generated. AI may make mistakes; please verify important information carefully.</em>
+        </div>
+
+        <p class="article-lead">Continuous valuations are a domain-theoretic model of probabilistic choice. Their Fubini problem asks when two valuations can be integrated in either order, even though the Scott topology on a product dcpo may be finer than the ordinary product topology. The manuscript summarized here gives positive results for countable spaces, the Smyth dcpo of the Sorgenfrey line, and dcpos with second-countable Scott topology.</p>
+
+        <div class="article-result">
+          <strong>Main results.</strong> If every open set of a space is the saturation of an at most countable subset, then every continuous valuation is point-continuous. The Smyth dcpo <em>D</em> = <em>Q</em>(ℝ<sub>ℓ</sub>) of the Sorgenfrey line is a Fubini object, although it carries a continuous valuation that is not point-continuous. Moreover, if the Scott-open set lattice σ(<em>P</em>) is a Fubini object, then <em>P</em> is one; in particular, every dcpo with second-countable Scott topology is a Fubini object.</div>
+
+        <h2>Point-continuity, centrality, and the Fubini problem</h2>
+        <p>A continuous valuation assigns a nonnegative mass to each open set, satisfies modularity, and preserves directed unions. Point-continuity strengthens this by requiring the mass of an open set to be detectable from finitely many points: whenever <em>r</em> &lt; μ(<em>U</em>), there is a finite set <em>F</em> ⊆ <em>U</em> such that μ(<em>V</em>) &gt; <em>r</em> for every open neighbourhood <em>V</em> of <em>F</em>.</p>
+        <p>For a dcpo <em>P</em>, a valuation is <em>central</em> when it commutes with every continuous valuation on every partner dcpo under iterated Choquet integration. A dcpo is called a <em>Fubini object</em> when all its continuous valuations are central. Point-continuous valuations are known to be central, but the converse fails in the Sorgenfrey-Smyth example below.</p>
+
+        <h2>Why countable spaces force finite witnesses</h2>
+        <p>For a subset <em>A</em> of a space and a valuation ν, the manuscript considers the neighbourhood capacity</p>
+        <div class="article-result">κ<sub>ν</sub>(<em>A</em>) = inf { ν(<em>V</em>) : <em>A</em> ⊆ <em>V</em> and <em>V</em> is open }.</div>
+        <p>If an at most countable set <em>A</em> is exhausted by increasing finite sets <em>F</em><sub>1</sub> ⊆ <em>F</em><sub>2</sub> ⊆ ···, modularity and directed continuity give κ<sub>ν</sub>(<em>A</em>) = sup<sub><em>n</em></sub> κ<sub>ν</sub>(<em>F</em><sub><em>n</em></sub>). When an open set <em>U</em> is the saturation of <em>A</em>, the sets <em>A</em> and <em>U</em> have the same open neighbourhoods, so κ<sub>ν</sub>(<em>A</em>) = ν(<em>U</em>). One finite stage therefore supplies the witness required for point-continuity.</p>
+        <p>This proves that every continuous valuation on a countable space is point-continuous. For dcpos, the argument applies whenever every Scott-open set has an at most countable order-coinitial subset. Consequently every countable dcpo satisfies <em>V</em>(<em>P</em>) = <em>P</em>(<em>P</em>) = <em>Z</em>(<em>P</em>).</p>
+
+        <h2>The Sorgenfrey-Smyth dcpo is not a counterexample to Fubini</h2>
+        <p>Let ℝ<sub>ℓ</sub> be the Sorgenfrey line and let <em>D</em> = <em>Q</em>(ℝ<sub>ℓ</sub>) be its nonempty compact subsets, ordered by reverse inclusion. Its Scott topology is the upper Vietoris topology. Goubault-Larrecq and Jia constructed a continuous valuation on <em>D</em> that is not point-continuous and suggested that this space might help produce a counterexample to general Fubini equations.</p>
+        <p>The manuscript proves the opposite conclusion for this particular dcpo: every continuous valuation on <em>D</em> is central. Thus the three classes are separated precisely as</p>
+        <div class="article-result"><em>P</em>(<em>D</em>) ⊊ <em>Z</em>(<em>D</em>) = <em>V</em>(<em>D</em>).</div>
+        <p>The proof first lifts each finite valuation on <em>D</em> to a finite τ-smooth Borel measure on the full Vietoris space. A countable family of minimum and maximum observations makes that space first-countable and produces a countable family of inner approximating opens. A Scott-continuous Fatou inequality, finite measurable partitions, and a Radon-Nikodym argument then establish the required incidence identity. Bounded approximation extends the result from finite valuations to arbitrary continuous valuations.</p>
+
+        <h2>Canonical incidence and descent</h2>
+        <p>The centrality test is reduced to the canonical incidence relation between points and Scott-open sets. If <em>M</em><sub><em>x</em></sub> = {<em>U</em> ∈ σ(<em>P</em>) : <em>x</em> ∈ <em>U</em>}, then a valuation μ on <em>P</em> is central exactly when every valuation ξ on σ(<em>P</em>) satisfies</p>
+        <div class="article-result">∫<sub>σ(<em>P</em>)</sub> μ(<em>U</em>) dξ(<em>U</em>) = ∫<sub><em>P</em></sub> ξ(<em>M</em><sub><em>x</em></sub>) dμ(<em>x</em>).</div>
+        <p>This formulation also gives a descent theorem: if σ(<em>P</em>) is a Fubini object, then so is <em>P</em>. Combining the descent with the co-consonance theorem for open-set lattices of countably based spaces yields the second-countable consequence. The manuscript explicitly notes that the result is not confined to the already known core-compact case.</p>
+
+        <h2>The generalized appendix</h2>
+        <p>The appendix works in an arbitrary subspace <em>Y</em> of the countable product ℝ<sub>ℓ</sub><sup>ℕ</sup>, with its ordinary product-subspace topology. If <em>f</em> : <em>Y</em> → Σ<em>P</em> is continuous and ν is any continuous valuation on <em>Y</em>, then the pushforward <em>f</em><sub>*</sub>ν is a central valuation on <em>P</em>. Neither valuation is required to have finite mass, and no closedness or ambient Borel measurability assumption is imposed on <em>Y</em>.</p>
+        <p>This statement concerns the centrality of a pushforward on the target dcpo. It does not identify the ordinary product topology on <em>Y</em> with a Scott topology, nor does it call <em>Y</em> itself a Fubini object. The proof uses discrete threshold minorants, a countable laminar family with a one-sided density property, a measure-extension argument for spaces with a clopen basis, and bounded approximation. Applied to a product representation of the full Vietoris space, it gives a second proof that the Sorgenfrey-Smyth dcpo is a Fubini object.</p>
+
+        <h2>Lean 4 formalization</h2>
+        <p>The downloadable Lean project formalizes Sections 2–5 of the main text. It maps all 23 numbered items in that scope: 19 are represented by theorem declarations with proof terms, three cited results are registered as explicit external axioms, and one is a definition. The formalized main results include the countable-dcpo theorem, the Sorgenfrey-Smyth Fubini theorem, the descent theorem, and the second-countable consequence.</p>
+        <p>A fresh audit with Lean and mathlib <code>v4.30.0-rc2</code> completed <code>lake build</code> successfully and found no <code>sorry</code>, <code>admit</code>, or unregistered project axioms. The main theorems are kernel-checked relative to ten clearly listed literature axioms. Appendix A is not formalized, and independent source-to-Lean review and human approval remain pending; the package should therefore not be read as a fully self-contained verification of the entire manuscript.</p>
+
+        <h2>AI contribution and verification boundary</h2>
+        <p>The manuscript declares that LLMs assisted with proof generation, proof development, proof checking, and language editing. More specifically, it states that the product-subspace proof method and its extension to arbitrary continuous valuations in Appendix A were completely generated by LLMs. This makes the appendix a useful example of why AI-assisted mathematics needs an explicit audit trail rather than an unqualified claim of correctness.</p>
+        <p>This blog post is a structured summary of the supplied 31-page manuscript. The PDF passes structural checks and contains no embedded files or JavaScript, but those checks do not certify the mathematical proofs. The accompanying Lean project checks the stated main-text scope under its explicit literature assumptions; it does not cover the generalized appendix. The appendix's measure-theoretic and approximation arguments should receive independent expert review before their conclusions are relied upon.</p>
+
+        <h2>Download</h2>
+        <div class="download-grid">
+          <section class="download-card">
+            <h3>Manuscript PDF</h3>
+            <p>The complete manuscript, including the generalized appendix on subspaces of countable Sorgenfrey products and the declaration describing the use of artificial intelligence.</p>
+            <a class="download-link" href="/downloads/point-continuous-central-valuations/point-continuous-central-valuations-manuscript.pdf" download>Download PDF</a>
+            <p class="download-meta">PDF · 31 pages · about 294 KB · SHA-256: <code>66b8b342b6c416f055b9e4cfffb9aa81c8e6b12a447ff840e8c69e9663f6edcb</code></p>
+          </section>
+          <section class="download-card">
+            <h3>Lean 4 source</h3>
+            <p>A buildable project with 41 Lean files, 4,388 lines of Lean source, fixed toolchain files, the source map, the external-axiom registry, and machine-readable audit records. The manuscript TeX/PDF and local build caches are not included.</p>
+            <a class="download-link" href="/downloads/point-continuous-central-valuations/point-continuous-central-valuations-lean.zip" download>Download Lean source</a>
+            <p class="download-meta">ZIP · about 205 KB · SHA-256: <code>c914252cf0b48abb7a732623d344be3b96aa6ff2ac26872541124a072a0e72fd</code></p>
+          </section>
+        </div>
+
+        <p class="ai-disclosure">This article was generated by AI.</p>
+      </article>
+
+      <aside class="topic-sidebar" aria-label="AI4MATH article navigation">
+        <div class="topic-sidebar-inner">
+          <h2>AI4MATH</h2>
+          <p>Monthly notes on formalized mathematics, Lean 4, and AI-assisted theorem proving.</p>
+
+          <h3>Articles</h3>
+          <nav class="article-nav" data-article-section="ai4math" aria-label="AI4MATH articles">
+            <a class="active" href="/ai4math/point-continuous-central-valuations/" aria-current="page">
+              <time datetime="2026-10">October 2026</time>
+              <span>Point-continuous and central valuations</span>
+            </a>
+          </nav>
+
+          <div class="sidebar-links">
+            <h3>Related</h3>
+            <a href="https://doi.org/10.1017/S0960129521000384" target="_blank" rel="noopener">Separating valuation classes</a>
+            <a href="https://doi.org/10.4230/LIPIcs.CALCO.2021.18" target="_blank" rel="noopener">The central valuations monad</a>
+          </div>
+        </div>
+      </aside>
+    </main>
+
+    <footer class="site-footer">
+      <p>© <span data-current-year>2026</span> Yuxu Chen</p>
+    </footer>
+  </div>
+  <script src="/js/academic.js" defer></script>
+</body>
+</html>

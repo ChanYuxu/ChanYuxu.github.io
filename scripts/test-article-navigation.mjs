@@ -10,6 +10,9 @@ const browserScript = await readFile(path.join(repositoryRoot, "js", "academic.j
 const articleIndex = JSON.parse(
   await readFile(path.join(repositoryRoot, "data", "articles.json"), "utf8"),
 );
+const latestDomainTheoryPath = articleIndex.sections["domain-theory"][0].path;
+const latestAi4MathPath = articleIndex.sections.ai4math[0].path;
+const latestNotesPath = articleIndex.sections.notes[0].path;
 
 class FakeClassList {
   constructor() {
@@ -130,14 +133,14 @@ const aiLanding = await executeNavigation({
 });
 assert.equal(
   aiLanding.location.replacedWith,
-  "/ai4math/formalizing-domain-theory-in-the-age-of-ai/",
+  latestAi4MathPath,
 );
 assert.equal(aiLanding.articleNavigation.children.length, articleIndex.sections.ai4math.length);
 assert.equal(
   aiLanding.articleNavigation.children[0].href,
-  "/ai4math/formalizing-domain-theory-in-the-age-of-ai/",
+  latestAi4MathPath,
 );
-assert.equal(aiLanding.fallback.href, "/ai4math/formalizing-domain-theory-in-the-age-of-ai/");
+assert.equal(aiLanding.fallback.href, latestAi4MathPath);
 assert.equal(aiLanding.warnings.length, 0);
 
 const domainLanding = await executeNavigation({
@@ -146,7 +149,7 @@ const domainLanding = await executeNavigation({
 });
 assert.equal(
   domainLanding.location.replacedWith,
-  "/domain-theory/finite-valuation-approximable-domains/",
+  latestDomainTheoryPath,
 );
 assert.equal(domainLanding.warnings.length, 0);
 
@@ -157,15 +160,15 @@ const notesLanding = await executeNavigation({
 });
 assert.equal(
   notesLanding.location.replacedWith,
-  "/notes/xiaofanpu-ai-cooking-app/",
+  latestNotesPath,
 );
 assert.equal(notesLanding.articleNavigation.children.length, articleIndex.sections.notes.length);
-assert.equal(notesLanding.sectionLinks[2].href, "/notes/xiaofanpu-ai-cooking-app/");
-assert.equal(notesLanding.fallback.href, "/notes/xiaofanpu-ai-cooking-app/");
+assert.equal(notesLanding.sectionLinks[2].href, latestNotesPath);
+assert.equal(notesLanding.fallback.href, latestNotesPath);
 assert.equal(notesLanding.warnings.length, 0);
 
 const aiArticle = await executeNavigation({
-  pathname: "/ai4math/formalizing-domain-theory-in-the-age-of-ai/",
+  pathname: latestAi4MathPath,
 });
 assert.equal(aiArticle.location.replacedWith, null);
 assert.equal(aiArticle.articleNavigation.children.length, articleIndex.sections.ai4math.length);
@@ -177,7 +180,7 @@ assert.equal(aiArticle.warnings.length, 0);
 
 const notesArticle = await executeNavigation({
   articleSection: "notes",
-  pathname: "/notes/xiaofanpu-ai-cooking-app/",
+  pathname: latestNotesPath,
 });
 assert.equal(notesArticle.location.replacedWith, null);
 assert.equal(notesArticle.articleNavigation.children.length, articleIndex.sections.notes.length);
