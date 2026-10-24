@@ -354,6 +354,31 @@ a:hover {
   font-size: 11px;
 }
 
+.timeline-figure {
+  margin: 24px 0 28px;
+}
+
+.timeline-figure a {
+  display: block;
+}
+
+.timeline-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: #fcfcfb;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+}
+
+.timeline-figure figcaption {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.55;
+  text-align: center;
+}
+
 .topic-article h2 {
   margin: 32px 0 11px;
   color: #3b3b3b;
@@ -438,6 +463,32 @@ a:hover {
 .download-link:hover {
   color: #ffffff;
   background: var(--link-hover);
+}
+
+.resource-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 15px;
+}
+
+.resource-actions a {
+  display: inline-block;
+  padding: 6px 10px;
+  color: var(--link);
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  font-size: 11px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.resource-actions a.primary-action,
+.resource-actions a:hover {
+  color: #ffffff;
+  background: var(--link);
+  border-color: var(--link);
 }
 
 .download-card .download-meta {

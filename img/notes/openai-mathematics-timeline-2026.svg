@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1080" viewBox="0 0 1200 1080" role="img" aria-labelledby="title description">
+  <title id="title">OpenAI 数学研究进展时间线，2026 年 2 月至 10 月</title>
+  <desc id="description">六个节点依次为 First Proof 研究级证明尝试、单位距离问题突破、十项跨领域进展及 Lean 证书、Navier–Stokes 多代理研究、百余公开问题能力主张与顾问组，以及首发 722 份、现存 719 份稿件的规模化发布。</desc>
+  <defs>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#243f48" flood-opacity="0.10"/>
+    </filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#426f7d"/>
+    </marker>
+    <style>
+      .sans { font-family: "Open Sans", "PingFang SC", "Microsoft YaHei", Arial, sans-serif; }
+      .serif { font-family: Georgia, "Times New Roman", "Songti SC", serif; }
+      .title { fill: #333333; font-size: 43px; font-weight: 650; }
+      .subtitle { fill: #777777; font-size: 22px; }
+      .date { fill: #426f7d; font-size: 24px; font-weight: 700; letter-spacing: 0.04em; }
+      .card-title { fill: #333333; font-size: 27px; font-weight: 650; }
+      .body { fill: #5d5d5d; font-size: 21px; }
+      .tag { fill: #ffffff; font-size: 16px; font-weight: 650; letter-spacing: 0.03em; }
+      .note { fill: #6b6254; font-size: 19px; }
+      .source { fill: #8a8174; font-size: 16px; }
+    </style>
+  </defs>
+
+  <rect width="1200" height="1080" rx="20" fill="#fcfcfb"/>
+  <rect x="1" y="1" width="1198" height="1078" rx="19" fill="none" stroke="#e8e8e8" stroke-width="2"/>
+
+  <text x="58" y="70" class="sans title">OpenAI 数学研究进展</text>
+  <text x="60" y="108" class="serif subtitle">2026 · 从研究级证明尝试到规模化结果发布</text>
+  <line x1="60" y1="137" x2="1140" y2="137" stroke="#e8e8e8" stroke-width="2"/>
+
+  <line x1="255" y1="191" x2="255" y2="910" stroke="#426f7d" stroke-width="4" marker-end="url(#arrow)"/>
+
+  <g>
+    <rect x="54" y="175" width="160" height="48" rx="24" fill="#eef3f4"/>
+    <text x="134" y="207" text-anchor="middle" class="sans date">02 · 20</text>
+    <circle cx="255" cy="199" r="13" fill="#ffffff" stroke="#426f7d" stroke-width="5"/>
+    <rect x="300" y="160" width="840" height="104" rx="12" fill="#ffffff" stroke="#e4e9ea" filter="url(#shadow)"/>
+    <rect x="324" y="180" width="98" height="27" rx="13.5" fill="#7c8f95"/>
+    <text x="373" y="199" text-anchor="middle" class="sans tag">研究尝试</text>
+    <text x="442" y="202" class="sans card-title">First Proof</text>
+    <text x="324" y="239" class="sans body">尝试十道专业研究问题；仍包含人工选择、反馈与修订。</text>
+  </g>
+
+  <g>
+    <rect x="54" y="302" width="160" height="48" rx="24" fill="#eef3f4"/>
+    <text x="134" y="334" text-anchor="middle" class="sans date">05 · 20</text>
+    <circle cx="255" cy="326" r="13" fill="#ffffff" stroke="#426f7d" stroke-width="5"/>
+    <rect x="300" y="287" width="840" height="104" rx="12" fill="#ffffff" stroke="#e4e9ea" filter="url(#shadow)"/>
+    <rect x="324" y="307" width="98" height="27" rx="13.5" fill="#426f7d"/>
+    <text x="373" y="326" text-anchor="middle" class="sans tag">外部检查</text>
+    <text x="442" y="329" class="sans card-title">单位距离问题</text>
+    <text x="324" y="366" class="sans body">给出反例构造，否定长期主流猜想；外部数学家参与核查。</text>
+  </g>
+
+  <g>
+    <rect x="54" y="429" width="160" height="48" rx="24" fill="#eef3f4"/>
+    <text x="134" y="461" text-anchor="middle" class="sans date">08 · 01</text>
+    <circle cx="255" cy="453" r="13" fill="#ffffff" stroke="#426f7d" stroke-width="5"/>
+    <rect x="300" y="414" width="840" height="104" rx="12" fill="#ffffff" stroke="#e4e9ea" filter="url(#shadow)"/>
+    <rect x="324" y="434" width="78" height="27" rx="13.5" fill="#426f7d"/>
+    <text x="363" y="453" text-anchor="middle" class="sans tag">LEAN</text>
+    <text x="422" y="456" class="sans card-title">十项跨领域进展</text>
+    <text x="324" y="493" class="sans body">覆盖八类方向；每项配有论文材料与 Lean 4 证书。</text>
+  </g>
+
+  <g>
+    <rect x="54" y="556" width="160" height="48" rx="24" fill="#eef3f4"/>
+    <text x="134" y="588" text-anchor="middle" class="sans date">09 · 08</text>
+    <circle cx="255" cy="580" r="13" fill="#ffffff" stroke="#426f7d" stroke-width="5"/>
+    <rect x="300" y="541" width="840" height="104" rx="12" fill="#ffffff" stroke="#e4e9ea" filter="url(#shadow)"/>
+    <rect x="324" y="561" width="146" height="27" rx="13.5" fill="#426f7d"/>
+    <text x="397" y="580" text-anchor="middle" class="sans tag">多代理 + LEAN</text>
+    <text x="490" y="583" class="sans card-title">Navier–Stokes</text>
+    <text x="324" y="620" class="sans body">约 10,000 个并发代理；88 小时研究，另用 17 小时形式化。</text>
+  </g>
+
+  <g>
+    <rect x="54" y="683" width="160" height="48" rx="24" fill="#eef3f4"/>
+    <text x="134" y="715" text-anchor="middle" class="sans date">09 · 21</text>
+    <circle cx="255" cy="707" r="13" fill="#ffffff" stroke="#426f7d" stroke-width="5"/>
+    <rect x="300" y="668" width="840" height="104" rx="12" fill="#ffffff" stroke="#e4e9ea" filter="url(#shadow)"/>
+    <rect x="324" y="688" width="98" height="27" rx="13.5" fill="#9a7c59"/>
+    <text x="373" y="707" text-anchor="middle" class="sans tag">能力主张</text>
+    <text x="442" y="710" class="sans card-title">100+ 公开问题与独立顾问组</text>
+    <text x="324" y="747" class="sans body">从单个结果扩展到跨领域能力，并进入发布治理议题。</text>
+  </g>
+
+  <g>
+    <rect x="54" y="810" width="160" height="48" rx="24" fill="#eef3f4"/>
+    <text x="134" y="842" text-anchor="middle" class="sans date">10 · 06</text>
+    <circle cx="255" cy="834" r="13" fill="#ffffff" stroke="#426f7d" stroke-width="5"/>
+    <rect x="300" y="795" width="840" height="118" rx="12" fill="#ffffff" stroke="#e4e9ea" filter="url(#shadow)"/>
+    <rect x="324" y="815" width="112" height="27" rx="13.5" fill="#243f48"/>
+    <text x="380" y="834" text-anchor="middle" class="sans tag">规模化发布</text>
+    <text x="456" y="837" class="sans card-title">首发 722 份稿件 · 372 个结果族</text>
+    <text x="324" y="874" class="sans body">现存 719 份；约 42% 主要结果带 Lean 形式化，仍待独立核查。</text>
+  </g>
+
+  <rect x="54" y="955" width="1086" height="78" rx="10" fill="#faf8f3" stroke="#e6dfd2"/>
+  <rect x="54" y="955" width="5" height="78" rx="2.5" fill="#cdbf9f"/>
+  <text x="78" y="987" class="serif note">阅读边界：公司发布 ≠ 共同体独立确认；Lean 通过 ≠ 形式命题忠实于原问题。</text>
+  <text x="78" y="1016" class="sans source">资料状态：2026-10-15 · 来源与限定见图后正文及参考链接</text>
+</svg>

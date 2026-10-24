@@ -56,14 +56,14 @@ class FakeNode {
 
 class FakeFragment extends FakeNode {}
 
-async function executeNavigation({ articleSection = "ai4math", landingSection = null, pathname }) {
+async function executeNavigation({ articleSection = "ai4math", articlePath = null, landingSection = null, pathname }) {
   const sectionLinks = [
     Object.assign(new FakeNode("a"), { dataset: { latestSection: "domain-theory" } }),
     Object.assign(new FakeNode("a"), { dataset: { latestSection: "ai4math" } }),
     Object.assign(new FakeNode("a"), { dataset: { latestSection: "notes" } }),
   ];
   const articleNavigation = Object.assign(new FakeNode("nav"), {
-    dataset: { articleSection },
+    dataset: { articleSection, ...(articlePath ? { articlePath } : {}) },
   });
   const fallback = new FakeNode("a");
   const status = new FakeNode("p");
@@ -189,5 +189,15 @@ assert.equal(
   "page",
 );
 assert.equal(notesArticle.warnings.length, 0);
+
+const translatedNotesArticle = await executeNavigation({
+  articleSection: "notes",
+  articlePath: latestNotesPath,
+  pathname: `${latestNotesPath}en.html`,
+});
+assert.equal(translatedNotesArticle.location.replacedWith, null);
+assert.equal(translatedNotesArticle.articleNavigation.children.length, articleIndex.sections.notes.length);
+assert.equal(translatedNotesArticle.articleNavigation.children[0].attributes["aria-current"], "page");
+assert.equal(translatedNotesArticle.warnings.length, 0);
 
 console.log("Automatic article navigation tests passed");

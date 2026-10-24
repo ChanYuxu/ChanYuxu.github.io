@@ -1,3 +1,3 @@
-# Yuxu Chen's Academic Homepage
+# Personal Academic Homepage
 
-This repository contains my personal academic homepage: [chanyuxu.github.io](https://chanyuxu.github.io/).
+This repository hosts a personal academic homepage.

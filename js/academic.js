@@ -26,7 +26,7 @@ const formatArticleMonth = (published) => {
 };
 
 const renderArticleNavigation = (navigation, articles) => {
-  const currentPath = normalizeArticlePath(window.location.pathname);
+  const currentPath = normalizeArticlePath(navigation.dataset.articlePath || window.location.pathname);
   const fragment = document.createDocumentFragment();
 
   articles.forEach((article) => {
