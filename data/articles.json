@@ -17,6 +17,12 @@
     ],
     "ai4math": [
       {
+        "path": "/ai4math/finite-separation-subprobability-powerdomains/",
+        "published": "2026-10-25",
+        "label": "Finite separation on subprobability powerdomains",
+        "title": "Finite separation on subprobability powerdomains"
+      },
+      {
         "path": "/ai4math/point-continuous-central-valuations/",
         "published": "2026-10-13",
         "label": "Point-continuous and central valuations",

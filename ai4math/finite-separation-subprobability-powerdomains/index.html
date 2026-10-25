@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="A Lean 4 formalization of finite separation for subprobability powerdomains over arbitrary FS-domains.">
+  <meta name="author" content="Yuxu Chen">
+  <meta name="section-label" content="Finite separation on subprobability powerdomains">
+  <meta property="article:published_time" content="2026-10-25">
+  <link rel="canonical" href="https://chanyuxu.github.io/ai4math/finite-separation-subprobability-powerdomains/">
+  <link rel="icon" href="/img/favicon.ico">
+  <link rel="stylesheet" href="/css/academic.css">
+  <title>Finite separation on subprobability powerdomains | AI4MATH | Yuxu Chen</title>
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+  <div class="site">
+    <header class="site-header">
+      <a class="site-title" href="/">Yuxu Chen</a>
+      <p class="site-description">Domain Theory and AI for Mathematics</p>
+    </header>
+
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="/">Home</a>
+      <a href="/domain-theory/" data-latest-section="domain-theory">Domain Theory</a>
+      <a class="active" href="/ai4math/" data-latest-section="ai4math" aria-current="page">AI4MATH</a>
+      <a href="/notes/" data-latest-section="notes">Notes</a>
+    </nav>
+
+    <main id="content" class="content article-layout">
+      <article class="topic-article">
+        <header class="article-header">
+          <p class="article-kicker"><time datetime="2026-10-25">October 25, 2026</time> · AI4MATH</p>
+          <h1>Finite separation on subprobability powerdomains</h1>
+          <p class="article-meta">FS-domains · continuous valuations · finite separation</p>
+        </header>
+
+        <div class="ai-section-notice" role="note" aria-label="AI content notice">
+          <em>All content in this section is AI-generated. AI may make mistakes; please verify important information carefully.</em>
+        </div>
+
+        <p class="article-lead">Continuous valuations provide a domain-theoretic model of probabilistic choice. This manuscript proves that the subprobability powerdomain preserves FS-domains, using finite separators on the source to construct finitely separated approximations on the valuation space. The accompanying Lean 4 development records the full construction and its principal examples.</p>
+
+        <div class="article-result">
+          <strong>Main result.</strong> The subprobability powerdomain construction preserves FS-domains: whenever <em>D</em> is an FS-domain, <em>V</em><sub>≤1</sub>(<em>D</em>) is also an FS-domain.
+        </div>
+
+        <h2>Why finite separation matters</h2>
+        <p>An FS-domain carries a directed approximate identity of Scott-continuous maps that are finitely separated from the identity. For a map <em>f</em> : <em>D</em> → <em>D</em>, finite separation means that there is a finite set <em>M</em> such that every <em>x</em> admits some <em>a</em> ∈ <em>M</em> with <em>f</em>(<em>x</em>) ≤ <em>a</em> ≤ <em>x</em>. The image of <em>f</em> need not itself be finite.</p>
+        <p>The probabilistic question is whether this finite control can be lifted from points of <em>D</em> to continuous subprobability valuations. This addresses a closure problem in probabilistic domain theory: the powerdomain construction should preserve the approximation structure needed for higher-order probabilistic semantics.</p>
+
+        <h2>The finite-order construction</h2>
+        <p>The proof begins on the basis of simple valuations. A finite separator <em>M</em> determines a finite poset of source slices, ordered by reverse inclusion. Height-dependent thresholds select the parts of an input valuation that are sufficiently visible at each level. A correction term along cover relations restores monotonicity when the selected subset changes.</p>
+        <p>The resulting local map keeps the atoms at the points <em>f</em><sup>2</sup>(<em>x</em>) rather than replacing the valuation by an element of a fixed finite-poset powerdomain. The finite poset controls the comparison, but it is not used as an unproved factorization object. A fixed scale leaves a positive margin, and the separating witness is moved to <em>M</em> and rounded down on one finite rational grid:</p>
+        <div class="article-result">
+          local monotone map → fixed positive margin → finite grid witness → uniform finite separator.
+        </div>
+        <p>This distinction is important: moving atoms to <em>M</em> constructs the finite separating witness; it is not part of the approximating map itself and does not require a monotone choice of representatives.</p>
+
+        <h2>From simple valuations to all valuations</h2>
+        <p>Simple subprobability valuations form a basis of <em>V</em><sub>≤1</sub>(<em>D</em>) when <em>D</em> is continuous. Each monotone basis map therefore extends by taking the directed supremum of its values on simple valuations way-below the input. The same finite set continues to separate the extension from the identity.</p>
+        <p>Finite simultaneous approximation then supplies one source approximation and one threshold level that work for any finite collection of way-below requirements. Composition squares turn these extensions into a directed approximate identity. This avoids assuming monotonicity in the numerical threshold or compatibility between independently chosen finite separators.</p>
+
+        <h2>Examples and edge cases</h2>
+        <p>The manuscript tests the construction on chains and a four-element diamond. The examples expose why exit corrections, unions of overlapping upper sets, strict thresholds, and a fixed scale are needed.</p>
+        <p>The singleton example also explains why the selection test must be strict. Replacing “greater than” by “greater than or equal to” creates a jump at the threshold and destroys Scott continuity of the local formula.</p>
+
+        <h2>Lean 4 formalization</h2>
+        <p>The source-facing endpoint is <code>FiniteSeparation.thm_main</code>:</p>
+        <div class="article-result"><code>IsFSDomain D → IsFSDomain (VSub D) ∧ ∃ z : VSub D, IsLeast z</code></div>
+        <p>The formalization contains 20 files in the <code>FiniteSeparation</code> proof tree. Its source ledger covers 25 numbered items and 14 groups of operative unnumbered claims. The PDF presents the same formalized propositions and proofs with refined exposition, while the Lean declarations retain stable source-facing names.</p>
+        <p>The project reuses proved order-theoretic and continuous-valuation infrastructure from the finite-valuation approximable development, including the valuation basis, finite monotone tests, and grid machinery. The downloadable archive bundles the needed Lean sources so that it can be built as one standalone Lake project; this reuse is disclosed and is not described as a from-scratch redevelopment.</p>
+
+        <h2>Verification boundary</h2>
+        <p>The recorded project status is <code>machine_accepted_human_pending</code>. Its canonical audit reports that all local modules were built, critical modules passed Lean trust-zero checks, the complete proof tree was rebuilt in a fresh project, and the transitive axiom audit found only <code>propext</code>, <code>Classical.choice</code>, and <code>Quot.sound</code>. An independent automated source-fidelity review also passed.</p>
+        <p>These checks are stronger than a successful development build, but they do not constitute human expert review, a literature-priority determination, journal acceptance, or publication approval. The PDF and formalization should still be read critically.</p>
+
+        <h2>Downloads</h2>
+        <div class="download-grid">
+          <section class="download-card">
+            <h3>Manuscript PDF</h3>
+            <p>The complete revised manuscript, including the finite-order construction, basis extension, examples, closure theorem, and an AI-assistance statement.</p>
+            <a class="download-link" href="/downloads/finite-separation-subprobability-powerdomains/finite-separation-subprobability-powerdomains-manuscript.pdf?v=20261025-5" download="finite-separation-subprobability-powerdomains-manuscript.pdf">Download PDF</a>
+            <p class="download-meta">PDF · 18 pages · about 372 KB · SHA-256: <code>a2518d9ebdebe6a28d68982982731420dbc1d9d1eb49596c1dc5315631ef3655</code></p>
+          </section>
+          <section class="download-card">
+            <h3>Lean 4 source</h3>
+            <p>A standalone Lake project containing the 20-file formalization, bundled reusable foundations, pinned toolchain files, and an explicit formalization-status record. The manuscript TeX and local build caches are excluded.</p>
+            <a class="download-link" href="/downloads/finite-separation-subprobability-powerdomains/finite-separation-subprobability-powerdomains-lean.zip" download>Download Lean source</a>
+            <p class="download-meta">ZIP · about 355 KB · 105 Lean files (20 in the formalization proof tree) · SHA-256: <code>419a4846c7a6ac564371ed37017cc23778c8f339ee78d8bb612651c665ca421a</code></p>
+          </section>
+        </div>
+
+        <p class="ai-disclosure">This article was generated by AI.</p>
+      </article>
+
+      <aside class="topic-sidebar" aria-label="AI4MATH article navigation">
+        <div class="topic-sidebar-inner">
+          <h2>AI4MATH</h2>
+          <p>Monthly notes on formalized mathematics, Lean 4, and AI-assisted theorem proving.</p>
+
+          <h3>Articles</h3>
+          <nav class="article-nav" data-article-section="ai4math" aria-label="AI4MATH articles">
+            <a class="active" href="/ai4math/finite-separation-subprobability-powerdomains/" aria-current="page">
+              <time datetime="2026-10">October 2026</time>
+              <span>Finite separation on subprobability powerdomains</span>
+            </a>
+          </nav>
+
+          <div class="sidebar-links">
+            <h3>Related</h3>
+            <a href="https://doi.org/10.1016/S1571-0661(05)80216-6" target="_blank" rel="noopener">The troublesome probabilistic powerdomain</a>
+            <a href="https://arxiv.org/abs/2608.03073v3" target="_blank" rel="noopener">Finite-valuation approximable structures</a>
+          </div>
+        </div>
+      </aside>
+    </main>
+
+    <footer class="site-footer">
+      <p>© <span data-current-year>2026</span> Yuxu Chen</p>
+    </footer>
+  </div>
+  <script src="/js/academic.js" defer></script>
+</body>
+</html>
