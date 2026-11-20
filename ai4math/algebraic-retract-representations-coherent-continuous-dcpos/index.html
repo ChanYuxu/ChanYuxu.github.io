@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="Algebraic retracts of coherent continuous dcpos, with applications to function spaces and prefinite approximation. Manuscript and audited Lean source.">
+  <meta name="author" content="Yuxu Chen">
+  <meta name="section-label" content="Algebraic retract representations">
+  <meta property="article:published_time" content="2026-11-20">
+  <link rel="canonical" href="https://chanyuxu.github.io/ai4math/algebraic-retract-representations-coherent-continuous-dcpos/">
+  <link rel="icon" href="/img/favicon.ico">
+  <link rel="stylesheet" href="/css/academic.css">
+  <title>Algebraic retract representations of coherent continuous dcpos | AI4MATH | Yuxu Chen</title>
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+  <div class="site">
+    <header class="site-header">
+      <a class="site-title" href="/">Yuxu Chen</a>
+      <p class="site-description">Domain Theory and AI for Mathematics</p>
+    </header>
+
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="/">Home</a>
+      <a href="/domain-theory/" data-latest-section="domain-theory">Domain Theory</a>
+      <a class="active" href="/ai4math/" data-latest-section="ai4math" aria-current="page">AI4MATH</a>
+      <a href="/notes/" data-latest-section="notes">Notes</a>
+    </nav>
+
+    <main id="content" class="content article-layout">
+      <article class="topic-article">
+        <header class="article-header">
+          <p class="article-kicker"><time datetime="2026-11-20">November 20, 2026</time> · AI4MATH</p>
+          <h1>Algebraic retract representations of coherent continuous dcpos</h1>
+          <p class="article-meta">continuous dcpos · algebraic retracts · coherence · Lawson compactness</p>
+        </header>
+
+        <div class="ai-section-notice" role="note" aria-label="AI content notice">
+          <em>All content in this section is AI-generated. AI may make mistakes; please verify important information carefully.</em>
+        </div>
+
+        <p class="article-lead">Every continuous dcpo is a Scott-continuous retract of an algebraic dcpo. What can be preserved when choosing the algebraic dcpo? For a coherent continuous dcpo, the representing dcpo can be chosen coherent, with a lower-finite poset of compact elements. If the original dcpo is Lawson compact or has a countable basis, the representation can retain those properties too.</p>
+
+        <div class="article-result">
+          <strong>Theorem 1.1.</strong> Every coherent continuous dcpo <em>D</em> admits Scott-continuous maps <em>s</em>: <em>D</em> → <em>A</em> and <em>r</em>: <em>A</em> → <em>D</em> with <em>r</em> ∘ <em>s</em> = id<sub><em>D</em></sub>, where <em>A</em> is coherent and algebraic and its compact-element poset is lower finite. If <em>D</em> is Lawson compact, <em>A</em> can also be chosen Lawson compact.
+        </div>
+        <p>Here “lower finite” means that each compact element of <em>A</em> has only finitely many <em>compact</em> elements below it. No least element is assumed.</p>
+
+        <h2>Why the usual ideal completion is not enough</h2>
+        <p>Coherence says that the intersection of two Scott-compact saturated sets is again Scott compact. Even if an arbitrary basis lies in a coherent dcpo, the common upper bounds of two basis elements within the basis need not be generated upwards by finitely many basis elements. The construction therefore takes the ideal completion of a different poset: finite systems of approximants, ordered by restriction.</p>
+
+        <h2>Finite systems and exact refinements</h2>
+        <p>Coherence provides finitely many choices of common approximants for the configurations used in a finite system. A system <em>p</em> has a Scott-open set <em>U</em><sub><em>p</em></sub> on which its data are valid. For two systems <em>p</em> and <em>q</em>, any point where both are valid also admits a common refinement from a fixed finite family. In particular,</p>
+        <div class="article-result">
+          <em>U</em><sub><em>p</em></sub> ∩ <em>U</em><sub><em>q</em></sub> = ⋃ { <em>U</em><sub><em>r</em></sub> | <em>r</em> is a chosen common refinement of <em>p</em> and <em>q</em> }.
+        </div>
+        <p>The nontrivial inclusion combines the two systems at a point in the intersection. For each point of <em>D</em>, the systems valid there form an ideal. Sending a point to this ideal gives the section; taking the directed supremum of the approximants recorded by an ideal gives the retraction.</p>
+
+        <h2>Lawson compactness and countable bases</h2>
+        <p>If <em>D</em> is Lawson compact, Scott compactness gives a finite cover by validity opens. Restricting the system poset to the upward closure of the selected systems preserves the retraction and gives property <em>M</em>: for each finite subset, the set of minimal upper bounds is finite, and every upper bound is above one of them. The ideal completion of the restricted poset is then Lawson compact.</p>
+        <p>Starting with a countable basis leaves only countably many finite systems. Their principal ideals give a countable compact basis for the representing dcpo; the Lawson-compact restriction also preserves countability.</p>
+
+        <h2>Applications</h2>
+        <p><strong>Function spaces.</strong> If <em>D</em> is Lawson compact and continuous and <em>R</em> is an RB-domain, then [<em>R</em> → <em>D</em>] is Lawson compact and continuous, while [<em>D</em> → <em>R</em>] is an RB-domain. The proof applies the algebraic function-space theorems to spaces of maps between the representing dcpos, then transports the results along the induced retractions.</p>
+        <p><strong>Prefinite approximation.</strong> A dcpo is Lawson compact and continuous exactly when its identity is the directed supremum of Scott-continuous maps below it, each factoring through a prefinite algebraic dcpo. The stage dcpos need not be finite: their compact elements are generated from a finite set by iterating minimal upper bounds, and their compact-element posets have property <em>M</em>. In this characterization, an increasing sequence of maps suffices exactly when the dcpo has a countable basis.</p>
+
+        <h2>Lean formalization and audit</h2>
+        <p>The Lean development includes the finite-system construction, the main retraction theorem, its countable variant, and the function-space and prefinite-approximation applications. The former literature assumptions from Luan–Li, Jia–Jung–Li, Jung, and Abramsky–Jung are proved in the project or supplied by checked library proofs.</p>
+        <p>The audit at trust level zero covers 1,312 declarations in 23 proof modules, including private declarations, plus six selected reused proofs. Their only transitive axiom dependencies are <code>propext</code>, <code>Classical.choice</code>, and <code>Quot.sound</code>; none depends on <code>sorryAx</code> or a custom axiom. Some bundled textbook files have unrelated, unaudited declarations. Independent and human mathematical review remain pending.</p>
+
+        <h2>Downloads</h2>
+        <div class="download-grid">
+          <section class="download-card">
+            <h3>Manuscript PDF</h3>
+            <p>The 19-page manuscript, including the proof and applications.</p>
+            <a class="download-link" href="/downloads/algebraic-retract-representations-coherent-continuous-dcpos/algebraic-retract-representations-coherent-continuous-dcpos-manuscript.pdf" download>Download PDF</a>
+            <p class="download-meta">PDF · 19 pages · about 197 KiB · SHA-256: <code>90450858c0b8bd639f651441590f95fcde3f1ab9da7a8cf64823fed2be3a6ee0</code></p>
+          </section>
+          <section class="download-card">
+            <h3>Lean 4 source</h3>
+            <p>Extract the archive and open <code>index.html</code> to browse the proofs offline. To compile, run the included build launcher or <code>lake build</code> in <code>lean/</code>. The first build may need to fetch pinned dependencies. No manuscript TeX is included.</p>
+            <a class="download-link" href="/downloads/algebraic-retract-representations-coherent-continuous-dcpos/algebraic-retract-representations-coherent-continuous-dcpos-lean.zip" download>Download Lean source</a>
+            <p class="download-meta">ZIP · about 1.18 MiB · 92 Lean files · SHA-256: <code>4182202dc3b7ee1cf382a38abf6805d962415dc245c04cdc6f4cac480fd7bd0c</code></p>
+          </section>
+        </div>
+
+        <p class="ai-disclosure">This article was generated by AI.</p>
+      </article>
+
+      <aside class="topic-sidebar" aria-label="AI4MATH article navigation">
+        <div class="topic-sidebar-inner">
+          <h2>AI4MATH</h2>
+          <p>Monthly notes on formalized mathematics, Lean 4, and AI-assisted theorem proving.</p>
+
+          <h3>Articles</h3>
+          <nav class="article-nav" data-article-section="ai4math" aria-label="AI4MATH articles">
+            <a class="active" href="/ai4math/algebraic-retract-representations-coherent-continuous-dcpos/" aria-current="page">
+              <time datetime="2026-11">November 2026</time>
+              <span>Algebraic retract representations</span>
+            </a>
+          </nav>
+        </div>
+      </aside>
+    </main>
+
+    <footer class="site-footer">
+      <p>© <span data-current-year>2026</span> Yuxu Chen</p>
+    </footer>
+  </div>
+  <script src="/js/academic.js" defer></script>
+</body>
+</html>

@@ -17,6 +17,12 @@
     ],
     "ai4math": [
       {
+        "path": "/ai4math/algebraic-retract-representations-coherent-continuous-dcpos/",
+        "published": "2026-11-20",
+        "label": "Algebraic retract representations",
+        "title": "Algebraic retract representations of coherent continuous dcpos"
+      },
+      {
         "path": "/ai4math/finite-separation-subprobability-powerdomains/",
         "published": "2026-10-25",
         "label": "Finite separation on subprobability powerdomains",
