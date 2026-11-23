@@ -316,18 +316,6 @@ a:hover {
   word-break: break-word;
 }
 
-.ai-section-notice {
-  margin: 0 0 24px;
-  padding: 11px 14px;
-  color: #6b6254;
-  background: #faf8f3;
-  border-left: 3px solid #cdbf9f;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 12px;
-  font-style: italic;
-  line-height: 1.65;
-}
-
 .article-lead {
   color: #4b4b4b;
   font-family: Georgia, "Times New Roman", serif;
@@ -463,6 +451,10 @@ a:hover {
 .download-link:hover {
   color: #ffffff;
   background: var(--link-hover);
+}
+
+.download-card > .download-link + .download-link {
+  margin-block-start: 10px;
 }
 
 .resource-actions {

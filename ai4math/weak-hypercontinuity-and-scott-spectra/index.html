@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="Two Cartesian closedness results and the spectrum part of Lawson and Mislove’s Problem 528.">
+  <meta name="author" content="Yuxu Chen">
+  <meta name="section-label" content="Weak hypercontinuity and Scott spectra">
+  <meta property="article:published_time" content="2026-11-23">
+  <link rel="canonical" href="https://chanyuxu.github.io/ai4math/weak-hypercontinuity-and-scott-spectra/">
+  <link rel="icon" href="/img/favicon.ico">
+  <link rel="stylesheet" href="/css/academic.css?v=20261123-button-spacing">
+  <title>Weak hypercontinuity and Scott spectra | AI4MATH | Yuxu Chen</title>
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+  <div class="site">
+    <header class="site-header">
+      <a class="site-title" href="/">Yuxu Chen</a>
+      <p class="site-description">Domain Theory and AI for Mathematics</p>
+    </header>
+
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="/">Home</a>
+      <a href="/domain-theory/" data-latest-section="domain-theory">Domain Theory</a>
+      <a class="active" href="/ai4math/" data-latest-section="ai4math" aria-current="page">AI4MATH</a>
+      <a href="/notes/" data-latest-section="notes">Notes</a>
+    </nav>
+
+    <main id="content" class="content article-layout">
+      <article class="topic-article">
+        <header class="article-header">
+          <p class="article-kicker"><time datetime="2026-11-23">November 23, 2026</time> · AI4MATH</p>
+          <h1>Weak hypercontinuity and Scott spectra</h1>
+          <p class="article-meta">From Cartesian closedness to the spectrum part of Problem 528</p>
+        </header>
+
+        <p class="article-lead">The project began with a question about function spaces: do weak hypercontinuous lattices form a Cartesian closed category? It led back to a question Lawson and Mislove asked in 1990. Two independently obtained closure results suggested a connection; the missing implication, proved in November with AI assistance, identifies the two classes in the distributive case.</p>
+
+        <h2>The question about spectra</h2>
+        <p>The <a href="https://staff.fnwi.uva.nl/j.vanmill/papers/papers1990/opit.pdf" target="_blank" rel="noopener">spectrum part of Problem 528</a> asks which distributive continuous lattices have spectra that are sober locally compact Scott spaces. For such a lattice <em>L</em>, the hull–kernel topology on its spectrum is already sober and locally compact. Its points are the proper completely prime filters of <em>L</em>, and its specialization order is inclusion. The question is whether the hull–kernel topology is precisely the Scott topology of that order.</p>
+        <p>A continuous lattice <em>L</em> is <em>weak hypercontinuous</em> when σ(<em>L</em><sup>op</sup>) = υ(<em>L</em><sup>op</sup>), where σ is the Scott topology and υ is the upper topology. The equality is on the <em>dual lattice</em>, not on the spectrum. Chen and Kou’s <a href="https://www.aimspress.com/article/doi/10.3934/math.2023242" target="_blank" rel="noopener">2023 paper</a> proved necessity and recorded the equivalence in the distributive algebraic case (Theorem 4.15). It asked whether sufficiency holds for all distributive continuous lattices (Problem 4.12).</p>
+
+        <h2>June: weak hypercontinuous lattices</h2>
+        <p>In June 2026, we proved that weak hypercontinuous lattices and Scott-continuous maps form a Cartesian closed category. The function-space theorem is more general: if the Scott space of a dcpo <em>D</em> is core compact and <em>M</em> is a weak hypercontinuous lattice, then the pointwise ordered lattice [<em>D</em> → <em>M</em>] of Scott-continuous maps is again weak hypercontinuous.</p>
+        <p>The proof passes through the lattice of Scott opens of <em>M</em><sup>op</sup>. The map <em>a</em> ↦ <em>M</em> ∖ ↑<em>a</em> has a right adjoint taking an open set to the infimum of its complement. This gives a retraction that lifts to function spaces. Together with products and the usual evaluation and currying maps, it gives Cartesian closedness.</p>
+
+        <h2>October: lattices with Scott spectra</h2>
+        <p>In October we realized that there was also a direct argument for the distributive continuous lattices whose spectra carry their intrinsic Scott topologies. They too form a Cartesian closed category with Scott-continuous maps. The spectrum of a lattice product comes from the disjoint union of the spectra; the function lattice is represented by the open sets of a product of spaces.</p>
+        <p>We already knew that the Scott-spectrum class was contained in the distributive weak hypercontinuous class. That both classes were closed under the same products and function spaces made the converse more plausible. It did not, by itself, prove the converse.</p>
+
+        <h2>November: the missing implication</h2>
+        <p>With AI assistance, the November preprint <a href="https://arxiv.org/abs/2611.14412v1" target="_blank" rel="noopener"><em>Scott spectra of distributive continuous lattices</em></a> proved sufficiency without algebraicity or countability assumptions.</p>
+        <div class="article-result">
+          <strong>Theorem 1.1 of the preprint.</strong> A distributive continuous lattice <em>L</em> is weak hypercontinuous if and only if the hull–kernel topology on Spec(<em>L</em>) equals the Scott topology of its inclusion order.
+        </div>
+        <p>The new proof embeds <em>L</em> into a continuous lattice that is both a frame and a coframe. The embedding preserves the way-below relation. The spectrum of the larger lattice carries its intrinsic Scott topology, and the induced map of spectra transfers that property back to Spec(<em>L</em>). This identifies the two distributive classes whose Cartesian closedness we had obtained separately.</p>
+
+        <h2>Lean verification</h2>
+        <p>For the Cartesian closedness manuscript, the Lean project includes arbitrary products (Theorem 3.4), the main function-space theorem with its retraction (Theorem 3.7), and the product result for Scott spectra (Proposition 4.3). This is a partial formalization: the separate Scott-spectrum function-space argument, the linear–nonlinear application, and parts of the appendix are not yet fully formalized.</p>
+        <p>The Scott spectra project proves the biconditional in Theorem 1.1 of the arXiv preprint. The proof is from an earlier version with the same theorem statement; it does not verify every step of the arXiv v1 exposition.</p>
+        <p>Both extracted projects were rebuilt. The bundled declarations use only Lean’s standard logical axioms; neither project uses admitted proofs.</p>
+        <p>Each ZIP contains a separate Lean 4 project. Open <code>index.html</code> to read the code offline, or run <code>lake build</code> in the extracted <code>lean/</code> folder. Mathlib is pinned but not bundled, so a first build may need to download dependencies.</p>
+
+        <h2>Read the papers and Lean code</h2>
+        <div class="download-grid">
+          <section class="download-card">
+            <h3>Cartesian closedness manuscript</h3>
+            <p>The joint manuscript contains the June and October results, as well as a linear–nonlinear application and an appendix on bounded-complete domains.</p>
+            <a class="download-link" href="/downloads/weak-hypercontinuity-and-scott-spectra/weak-hypercontinuous-lattices-manuscript.pdf" download>Download PDF</a>
+            <p class="download-meta">PDF · 17 pages · SHA-256: <code>09d7fb6d9135031299fe7cea029f28f2fe0e8add6938e3e1e01cbfbca86685a4</code></p>
+            <a class="download-link" href="/downloads/weak-hypercontinuity-and-scott-spectra/weak-hypercontinuous-lattices-lean.zip" download aria-label="Download Lean ZIP for the Cartesian closedness manuscript">Download Lean ZIP</a>
+            <p class="download-meta">Lean 4 source · 328 KiB · SHA-256: <code>cdebb7e1fbae866c622e5246a449f3677d1f1b0ee0e94cd5ec91b54ca8c6733c</code></p>
+          </section>
+          <section class="download-card">
+            <h3>Scott spectra preprint</h3>
+            <p>The November proof of the converse and the resulting characterization.</p>
+            <a class="download-link" href="https://arxiv.org/pdf/2611.14412v1" target="_blank" rel="noopener">Read on arXiv</a>
+            <a class="download-link" href="/downloads/weak-hypercontinuity-and-scott-spectra/scott-spectra-lean.zip" download aria-label="Download Lean ZIP for the Scott spectra preprint">Download Lean ZIP</a>
+            <p class="download-meta">Lean 4 source · 588 KiB · SHA-256: <code>7a1eadb7be1188087925e0143371c2b5a743479aabe16c7ea07d6c5d9850135b</code></p>
+          </section>
+        </div>
+
+        <p class="ai-disclosure">This article was generated by AI.</p>
+      </article>
+
+      <aside class="topic-sidebar" aria-label="AI4MATH article navigation">
+        <div class="topic-sidebar-inner">
+          <h2>AI4MATH</h2>
+          <p>Monthly notes on formalized mathematics, Lean 4, and AI-assisted theorem proving.</p>
+          <h3>Articles</h3>
+          <nav class="article-nav" data-article-section="ai4math" aria-label="AI4MATH articles">
+            <a class="active" href="/ai4math/weak-hypercontinuity-and-scott-spectra/" aria-current="page">
+              <time datetime="2026-11">November 2026</time>
+              <span>Weak hypercontinuity and Scott spectra</span>
+            </a>
+          </nav>
+        </div>
+      </aside>
+    </main>
+
+    <footer class="site-footer">
+      <p>© <span data-current-year>2026</span> Yuxu Chen</p>
+    </footer>
+  </div>
+  <script src="/js/academic.js" defer></script>
+</body>
+</html>
