@@ -17,6 +17,12 @@
     ],
     "ai4math": [
       {
+        "path": "/ai4math/scott-d-completable-spaces/",
+        "published": "2026-11-23",
+        "label": "Scott D-completable spaces",
+        "title": "Scott D-completable spaces"
+      },
+      {
         "path": "/ai4math/weak-hypercontinuity-and-scott-spectra/",
         "published": "2026-11-23",
         "label": "Weak hypercontinuity and Scott spectra",
