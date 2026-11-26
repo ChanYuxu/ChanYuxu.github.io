@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="A coherence-degree classification of stable-retract-closed Cartesian closed subcategories of countably based dI-domains, with universal and reflexive domains.">
+  <meta name="author" content="Yuxu Chen">
+  <meta name="section-label" content="Stable categories of dI-domains">
+  <meta property="article:published_time" content="2026-11-25">
+  <meta property="article:modified_time" content="2026-11-26">
+  <link rel="canonical" href="https://chanyuxu.github.io/ai4math/di-domain-classification/">
+  <link rel="icon" href="/img/favicon.ico">
+  <link rel="stylesheet" href="/css/academic.css?v=20261123-button-spacing">
+  <title>Stable-retract-closed cartesian closed subcategories of countably based dI-domains | AI4MATH | Yuxu Chen</title>
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+  <div class="site">
+    <header class="site-header">
+      <a class="site-title" href="/">Yuxu Chen</a>
+      <p class="site-description">Domain Theory and AI for Mathematics</p>
+    </header>
+
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="/">Home</a>
+      <a href="/domain-theory/" data-latest-section="domain-theory">Domain Theory</a>
+      <a class="active" href="/ai4math/" data-latest-section="ai4math" aria-current="page">AI4MATH</a>
+      <a href="/notes/" data-latest-section="notes">Notes</a>
+    </nav>
+
+    <main id="content" class="content article-layout">
+      <article class="topic-article">
+        <header class="article-header">
+          <p class="article-kicker"><time datetime="2026-11-25">November 25, 2026</time> · AI4MATH</p>
+          <h1>Stable-retract-closed cartesian closed subcategories of countably based dI-domains</h1>
+          <p class="article-meta">Yuxu Chen · Stable maps · Coherence degree · Cartesian closed categories</p>
+          <p class="article-meta">Updated <time datetime="2026-11-26">November 26, 2026</time></p>
+        </header>
+
+        <p class="article-lead">Which classes of domains remain closed when we form products, stable function spaces and stable retracts? This manuscript gives a classification for countably based dI-domains. The answer is governed by coherence degree, but changing from Scott-continuous maps to stable maps changes the list of possible categories.</p>
+
+        <h2>Why the stable setting is different</h2>
+        <p><a href="https://doi.org/10.1016/j.tcs.2014.02.042" target="_blank" rel="noopener">Bauer, Plotkin and Scott</a> classified retract-closed Cartesian closed subcategories of separable Scott domains with Scott-continuous maps. Their classification distinguishes finite domains, domains with finitely many maximal elements, and unrestricted domains, with separate lattice cases. A Scott-continuous retraction need not be stable, so that classification cannot simply be transferred to stable maps.</p>
+        <p>Here the ambient category is <strong>DI</strong><sub>ω</sub>: countably based dI-domains and stable maps. These maps are Scott continuous and preserve meets of compatible inputs; they are not required to preserve the least element. The exponential [<em>D</em> →<sub>st</sub> <em>E</em>] carries the <em>stable order</em>, not the pointwise order. A stable retract consists of stable maps <em>s</em>: <em>D</em> → <em>E</em> and <em>r</em>: <em>E</em> → <em>D</em> with <em>r</em> ∘ <em>s</em> = id<sub><em>D</em></sub>. No embedding–projection inequality is imposed.</p>
+        <p>The two-element chain <strong>2</strong> already shows why this matters. Its three stable self-maps form a chain in the pointwise order, but a three-element flat domain <em>T</em><sub>2</sub> in the stable order. Thus finite distributive lattices are not closed under stable exponentials.</p>
+
+        <h2>Coherence degree and the classification</h2>
+        <p>The invariant κ(<em>D</em>) is the coherence degree introduced by Bauer, Plotkin and Scott. It measures inconsistency among compact elements through ranks of minimally inconsistent trees. Degree zero characterizes complete lattices; the other possible degrees run from 2 to ω<sub>1</sub>. This use of coherence concerns the existence of upper bounds, not topological coherence of compact saturated sets.</p>
+        <div class="article-result">
+          <strong>Theorem 3.4.</strong> For nontrivial countably based dI-domains <em>D</em> and <em>E</em>,
+          <p>κ([<em>D</em> →<sub>st</sub> <em>E</em>]) = max{2, κ(<em>E</em>)}.</p>
+        </div>
+        <p>The constant 2 records the additional binary inconsistency that the stable order can create. Larger minimally inconsistent families of compact stable maps also remain inconsistent in the pointwise function space, which makes it possible to compare their tree ranks.</p>
+        <p>Write <em>𝒟</em><sub>α</sub> for all countably based dI-domains of degree less than α, and <em>𝒟</em><sup>fin</sup><sub>α</sub> for their finite members.</p>
+        <div class="article-result">
+          <strong>Theorem 1.1.</strong> The nontrivial replete full Cartesian closed subcategories of <strong>DI</strong><sub>ω</sub> closed under stable retracts are exactly
+          <p><em>𝒟</em><sup>fin</sup><sub>α</sub> &nbsp; (3 ≤ α ≤ ω),</p>
+          <p><em>𝒟</em><sub>α</sub> &nbsp; (3 ≤ α ≤ ω<sub>1</sub> + 1).</p>
+        </div>
+        <p>The two families are pairwise distinct. “Replete” means closed under isomorphism, and “nontrivial” means that the category contains an object with at least two elements. Every category in the second family contains an infinite object.</p>
+        <p>There is no separate family determined by having finitely many maximal elements. For example, the powerset domain 𝒫(ℕ) has a unique maximal element, whereas its stable predicate space [𝒫(ℕ) →<sub>st</sub> <strong>2</strong>] is the countable flat domain ℕ<sub>⊥</sub>, which has infinitely many maximal elements.</p>
+
+        <h2>From comparison to stable retracts</h2>
+        <p>The proof adapts the tree and forest comparisons of Bauer, Plotkin and Scott. The additional work is to construct sections and retractions that preserve compatible meets. In the event representation, fixed predecessor sets ensure stability, while finite sets of events make the retractions Scott continuous.</p>
+        <p>A useful intermediate relation allows <em>D</em> to be a stable retract of [<em>H</em> →<sub>st</sub> <em>E</em>] for some countably based 2-coherent dI-domain <em>H</em>. For nontrivial <em>E</em>, this is equivalent to κ(<em>D</em>) ≤ max{2, κ(<em>E</em>)}. It is a comparison through a function space, not a criterion for ordinary stable retraction between arbitrary domains.</p>
+        <p>The finite and infinite cases then separate. A finite domain of degree at most <em>n</em> is a stable retract of a finite power of <em>T</em><sub><em>n</em></sub>. In the infinite case, stable predicate spaces yield the countable flat domain. The <a href="https://doi.org/10.1017/S0960129515000195" target="_blank" rel="noopener">universal-domain theorem of Zhao and Kou</a> supplies the 2-coherent domains needed to complete the classification.</p>
+
+        <h2>Categories generated by one object</h2>
+        <p>The category generated by <em>D</em> is the smallest category with these closure properties containing <em>D</em>. For nontrivial <em>D</em>, put β = max{2, κ(<em>D</em>)}. Its generated category is <em>𝒟</em><sup>fin</sup><sub>β+1</sub> when <em>D</em> is finite, and <em>𝒟</em><sub>β+1</sub> when <em>D</em> is infinite. Thus a single object determines a successor cut.</p>
+        <p>Corollary 4.23 also shows that <em>𝒟</em><sup>fin</sup><sub>ω</sub> and the limit cuts <em>𝒟</em><sub>λ</sub> with 3 ≤ λ ≤ ω<sub>1</sub> cannot be generated by one object. For a limit cut in this range, any proposed generator already belongs to a smaller successor cut. Closing it under products, stable function spaces and stable retracts therefore cannot recover the whole limit cut. The restriction on λ keeps the statement within the range of distinct categories in the classification.</p>
+
+        <h2>Universal objects and reflexive domains</h2>
+        <p>A stable universal object of a category is a member of that category of which every other member is a stable retract. Among the classified categories, such an object exists exactly for <em>𝒟</em><sub>β+1</sub>, where 2 ≤ β ≤ ω<sub>1</sub>. In this parameter range, no finite-object category and no limit cut has one. For example, <em>𝒟</em><sub>ω</sub> has no stable universal object, but <em>𝒟</em><sub>ω+1</sub> does. Universal dI-domains were already known; the result here identifies precisely which degree cuts admit them.</p>
+        <p>A domain <em>E</em> is stable reflexive when [<em>E</em> →<sub>st</sub> <em>E</em>] is a stable retract of <em>E</em>. Such a retraction supports the usual interpretation of the untyped λβ-calculus. Theorem 5.5 proves that, for nontrivial stable reflexive <em>E</em>,</p>
+        <div class="article-result">
+          <em>D</em> is a stable retract of <em>E</em> &nbsp; ⇔ &nbsp; κ(<em>D</em>) ≤ κ(<em>E</em>).
+        </div>
+        <p>Consequently, mutual stable-retract classes of nontrivial stable reflexive domains are ordered by the degrees in [2, ω<sub>1</sub>]. This is a classification up to mutual stable retraction, not up to isomorphism, and it does not classify specified application–abstraction pairs or their equational theories.</p>
+
+        <h2>Formal verification</h2>
+        <p>The accompanying Lean 4 project develops the domain, event-structure and tree constructions and exposes the source-facing classification, function-space, comparison, universal-object and reflexive-domain results. Corollary 4.23 is formalized with the bound 3 ≤ λ ≤ ω<sub>1</sub>, including both generator formulas and the two non-generation conclusions. The PDF also gives the tree-rank argument explicitly, explains why the least generated category exists, and expands the event-structure, branch-completion, forest and λβ-calculus arguments.</p>
+        <p>All 315 local modules have been rebuilt, and dependency auditing and kernel replay have passed. The revised Corollary 4.23 and the expanded proof passages have been independently reviewed against their Lean definitions and dependencies. The proofs use only the standard Lean logical axioms, with no additional mathematical axioms. These checks do not establish mathematical novelty or verify every bibliographic attribution. Human expert review remains pending.</p>
+
+        <h2>Read the paper</h2>
+        <div class="download-grid">
+          <section class="download-card">
+            <h3>Manuscript</h3>
+            <p>Stable function spaces, the two category families, universal objects and stable reflexive domains. Author: Yuxu Chen.</p>
+            <a class="download-link" href="/downloads/di-domain-classification/di-domain-classification.pdf" download>Download PDF</a>
+            <p class="download-meta">PDF · 36 pages · SHA-256: <code>fe5c4ce0f9e086167b04e0d7715b3387180d4f613b6d4e586e23292d24ad1b85</code></p>
+          </section>
+          <section class="download-card">
+            <h3>Lean project</h3>
+            <p>Standalone source code, locked public dependencies, a build launcher and an offline reader. No manuscript source or local audit files are included.</p>
+            <a class="download-link" href="/downloads/di-domain-classification/di-domain-classification-lean.zip" download>Download Lean ZIP</a>
+            <p><a href="/downloads/di-domain-classification/di-domain-classification-lean.html" target="_blank" rel="noopener">Browse the Lean code</a></p>
+            <p class="download-meta">Lean 4 source · 534 KiB · SHA-256: <code>457e09a7f646baea76ba556e25cc52e4e9ca735b332fce4856eb8c57d7d3da3b</code></p>
+          </section>
+        </div>
+
+        <p class="ai-disclosure">This article was generated by AI.</p>
+      </article>
+
+      <aside class="topic-sidebar" aria-label="AI4MATH article navigation">
+        <div class="topic-sidebar-inner">
+          <h2>AI4MATH</h2>
+          <p>Monthly notes on formalized mathematics, Lean 4, and AI-assisted theorem proving.</p>
+          <h3>Articles</h3>
+          <nav class="article-nav" data-article-section="ai4math" aria-label="AI4MATH articles">
+            <a class="active" href="/ai4math/di-domain-classification/" aria-current="page">
+              <time datetime="2026-11">November 2026</time>
+              <span>Stable categories of dI-domains</span>
+            </a>
+          </nav>
+        </div>
+      </aside>
+    </main>
+
+    <footer class="site-footer">
+      <p>© <span data-current-year>2026</span> Yuxu Chen</p>
+    </footer>
+  </div>
+  <script src="/js/academic.js" defer></script>
+</body>
+</html>

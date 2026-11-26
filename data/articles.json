@@ -17,6 +17,12 @@
     ],
     "ai4math": [
       {
+        "path": "/ai4math/di-domain-classification/",
+        "published": "2026-11-25",
+        "label": "Stable categories of dI-domains",
+        "title": "Stable-retract-closed cartesian closed subcategories of countably based dI-domains"
+      },
+      {
         "path": "/ai4math/scott-d-completable-spaces/",
         "published": "2026-11-23",
         "label": "Scott D-completable spaces",
